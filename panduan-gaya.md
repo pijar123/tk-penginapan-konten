@@ -8,6 +8,7 @@ Target penonton: pemilik/pengelola penginapan kecil, bukan tamu.
 
 Fitur yang BOLEH disebut (sudah dikonfirmasi):
 - Tamu cek kamar kosong sendiri (kalender + daftar kamar tersedia)
+- Kamar yang sudah penuh tampil "Penuh", jadi tamu tahu tanpa bertanya
 - Tamu pesan langsung tanpa menunggu balasan chat
 - Nota + QRIS otomatis
 - Biaya tetap mulai Rp149rb/bulan, bukan potong komisi per pesanan
