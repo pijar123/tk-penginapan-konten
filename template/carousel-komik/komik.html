@@ -32,7 +32,7 @@ html,body{margin:0;width:1080px;height:1350px;overflow:hidden;font-family:P;back
 </style></head><body><div class="page" id="page"></div>
 <script>
 const NAVY='#16202A', O=`stroke="${NAVY}" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"`;
-function arm(x,y,ang,len,col,skin,prop=''){return `<g transform="translate(${x},${y}) rotate(${ang})"><rect x="-24" y="-10" width="48" height="${len+10}" rx="24" fill="${col}" ${O}/><g transform="translate(0,${len})">${prop}<circle r="27" fill="${skin}" ${O}/></g></g>`}
+function arm(x,y,ang,len,col,skin,prop=''){return `<g transform="translate(${x},${y}) rotate(${ang})"><rect x="-24" y="-10" width="48" height="${len+10}" rx="24" fill="${col}" ${O}/><g transform="translate(0,${len})"><circle r="27" fill="${skin}" ${O}/>${prop}</g></g>`}
 function face(e,ink='#2B2321',glasses=false){
   let eyes='',mouth='',extra='';
   if(e==='happy'){eyes=`<path d="M-44 10 Q-30 -8 -16 10 M16 10 Q30 -8 44 10" stroke="${ink}" stroke-width="8" fill="none" stroke-linecap="round"/>`}

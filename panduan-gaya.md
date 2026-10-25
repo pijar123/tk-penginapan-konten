@@ -48,6 +48,7 @@ Kode tokoh ada di `template/` (fungsi rara(), bimo(), jaka() dan versi video di 
 - **Sound design wajib di semua video**: musik latar ceria buatan sendiri + efek suara yang pas dengan gerakan (langkah, bel, whoosh, pop teks, stempel, ting, ta-da). Buat dengan `template/video-kartun/sound.py` (disintesis sendiri, aman hak cipta). Jangan pakai lagu/sound milik orang lain. Loudness akhir sekitar -14 LUFS.
 - **Carousel**: gaya komik ala `sampel/komik-sampel-*.jpg`. 1080×1350, 5–7 slide. Slide 1 sampul komik (latar navy, judul besar miring, ledakan warna, efek "BZZT!"), slide isi = 2 panel (atas: masalah dari sisi tamu, bawah: solusinya) dengan balon kata, kotak narasi kuning, garis tebal navy, latar titik halftone; slide terakhir CTA (latar teal gelap, tokoh, tombol oranye "Coba demo gratis"). Basis: `template/carousel-komik/`.
 - Ilustrasi HP/aplikasi memakai contoh "Homestay Anda" dengan kamar Standar/Deluxe/Keluarga.
+- Saat tokoh memegang HP (atau benda lain), tangan selalu di BELAKANG HP, tidak boleh menutupi layar.
 
 ## Penamaan file
 Folder per minggu: `2026-11-minggu2/`. Nama: `v1_2nov.mp4`, `3nov_1.jpg` dst., plus `caption.md` berisi caption IG/TikTok dan jadwal tiap konten.
