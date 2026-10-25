@@ -1,0 +1,207 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:P;src:url(file:///usr/share/fonts/truetype/google-fonts/Poppins-Bold.ttf);font-weight:700}
+@font-face{font-family:P;src:url(file:///usr/share/fonts/truetype/google-fonts/Poppins-Medium.ttf);font-weight:500}
+@font-face{font-family:P;src:url(file:///usr/share/fonts/truetype/google-fonts/Poppins-Regular.ttf);font-weight:400}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#FCF5EB;font-family:P}
+#stage{position:absolute;inset:0}
+.ov{position:absolute;top:70px;left:50%;transform:translateX(-50%);background:#16202A;color:#fff;border-radius:22px;padding:16px 34px;text-align:center;z-index:40}
+.ov .h{font-weight:700;font-size:30px;display:flex;gap:12px;align-items:center;justify-content:center}
+.ov .tag{background:#FFD45C;color:#16202A;border-radius:8px;padding:1px 10px;font-size:22px}
+.ov .w{font-weight:400;font-size:24px;opacity:.9;margin-top:2px}
+.cap{position:absolute;left:0;right:0;top:250px;text-align:center;font-weight:700;color:#173336;font-size:74px;line-height:1.15;z-index:15}
+.cap .hl{background:#FFD45C;padding:0 14px;border-radius:10px}
+.phone{position:absolute;left:50%;top:560px;width:600px;height:480px;margin-left:-300px;background:#16202A;border-radius:56px;padding:18px;box-sizing:border-box;z-index:12;box-shadow:0 30px 60px rgba(0,0,0,.18)}
+.scr{background:#fff;border-radius:40px;width:100%;height:100%;padding:34px 26px;box-sizing:border-box}
+.scr .t{font-weight:700;font-size:30px;color:#173336}
+.scr .s{font-size:20px;color:#7a8580;margin-bottom:18px}
+.room{display:flex;align-items:center;gap:16px;border:2px solid #eee6da;border-radius:20px;padding:14px;margin-bottom:14px;position:relative}
+.room .sw{width:64px;height:52px;border-radius:12px}
+.room .n{font-weight:700;font-size:24px;color:#173336}
+.room .p{font-size:18px;color:#7a8580}
+.badge{position:absolute;right:14px;top:50%;background:#FD5B35;color:#fff;font-weight:700;font-size:20px;border-radius:12px;padding:6px 14px;transform:translateY(-50%) scale(0)}
+.cta{position:absolute;left:0;right:0;top:0;bottom:0;background:#13343B;z-index:30;opacity:0;display:flex;flex-direction:column;justify-content:center;align-items:center;color:#fff}
+.cta .big{font-weight:700;font-size:72px;text-align:center;line-height:1.15}
+.cta .btn{margin-top:60px;background:#FD5B35;border-radius:60px;padding:28px 64px;font-weight:700;font-size:52px}
+.cta .url{margin-top:40px;font-weight:700;font-size:44px}
+.cta .sm{margin-top:18px;font-size:30px;opacity:.75}
+</style></head><body><div id="stage">
+
+<div class="ov"><div class="h"><span class="tag">IG</span><span class="tag">TikTok</span>@tk.penginapan</div><div class="w">titikkumpul.id/layanan-penginapan</div></div>
+
+<div class="cap" id="cap"></div>
+
+<svg id="scene" width="1080" height="1920" viewBox="0 0 1080 1920" style="position:absolute;inset:0">
+  <!-- wall decor -->
+  <rect x="0" y="0" width="1080" height="1920" fill="#FCF5EB"/>
+  <g id="sun" opacity=".9"><circle cx="880" cy="760" r="0" fill="#FFD45C"/></g>
+  <!-- window -->
+  <g id="win"><rect x="110" y="700" width="260" height="300" rx="24" fill="#BFE3E0"/><rect x="110" y="700" width="260" height="300" rx="24" fill="none" stroke="#15787D" stroke-width="12"/><line x1="240" y1="700" x2="240" y2="1000" stroke="#15787D" stroke-width="10"/><line x1="110" y1="850" x2="370" y2="850" stroke="#15787D" stroke-width="10"/></g>
+  <!-- key board -->
+  <g id="keys"><rect x="700" y="740" width="260" height="190" rx="18" fill="#E9DCC8"/>
+    <text x="830" y="790" text-anchor="middle" font-family="P" font-weight="700" font-size="26" fill="#173336">KUNCI</text>
+    <g fill="#15787D"><circle cx="760" cy="840" r="12"/><circle cx="830" cy="840" r="12"/><circle cx="900" cy="840" r="12"/></g>
+    <g stroke="#173336" stroke-width="6"><line x1="760" y1="852" x2="760" y2="890"/><line x1="830" y1="852" x2="830" y2="890"/><line x1="900" y1="852" x2="900" y2="890"/></g>
+  </g>
+  <!-- floor -->
+  <rect x="0" y="1690" width="1080" height="230" fill="#E9DCC8"/>
+
+  <!-- STAFF (behind counter) -->
+  <g id="staff" transform="translate(330,0)">
+    <g id="staffBody">
+      <rect x="-110" y="1260" width="220" height="260" rx="70" fill="#15787D"/>
+      <path d="M-30 1262 L0 1310 L30 1262 Z" fill="#fff"/>
+      <!-- arm right (towards guest) -->
+      <g id="staffArm" transform="translate(95,1300)"><rect x="-22" y="0" width="44" height="150" rx="22" fill="#15787D"/><circle cx="0" cy="155" r="26" fill="#C98B5F"/>
+        <g id="key" opacity="0" transform="translate(0,175)"><circle cx="0" cy="0" r="16" fill="none" stroke="#FFD45C" stroke-width="8"/><rect x="-4" y="14" width="8" height="40" fill="#FFD45C"/><rect x="4" y="40" width="14" height="7" fill="#FFD45C"/></g>
+      </g>
+      <g transform="translate(-95,1300)"><rect x="-22" y="0" width="44" height="140" rx="22" fill="#15787D"/></g>
+      <!-- head -->
+      <g id="staffHead" transform="translate(0,1170)">
+        <g id="staffHairBack"><path d="M-108 -20 C-114 -118 114 -118 108 -20 L116 62 L96 52 L108 108 L82 88 L84 128 L56 104 L-56 104 L-84 128 L-82 88 L-108 108 L-96 52 L-116 62 Z" fill="#B58BF5"/></g>
+        <rect x="-16" y="40" width="32" height="40" fill="#C98B5F"/>
+        <circle r="88" fill="#C98B5F"/>
+        <g id="staffBangs"><path d="M-98 -8 C-96 -112 96 -112 98 -8 C84 -56 34 -74 10 -44 L0 -22 L-10 -44 C-34 -74 -84 -56 -98 -8 Z" fill="#B58BF5"/>
+          <path d="M-60 -72 C-30 -96 20 -98 50 -80" stroke="#E4CCFF" stroke-width="10" fill="none" stroke-linecap="round"/></g>
+        <circle cx="-90" cy="48" r="15" fill="none" stroke="#FFD45C" stroke-width="6"/><circle cx="90" cy="48" r="15" fill="none" stroke="#FFD45C" stroke-width="6"/>
+        <g id="staffEyes"><ellipse cx="-30" cy="5" rx="9" ry="12" fill="#2B2321"/><ellipse cx="30" cy="5" rx="9" ry="12" fill="#2B2321"/></g>
+        <path id="staffMouth" d="M-26 38 Q0 58 26 38" stroke="#2B2321" stroke-width="7" fill="none" stroke-linecap="round"/>
+        <circle cx="-52" cy="34" r="12" fill="#FD5B35" opacity=".35"/><circle cx="52" cy="34" r="12" fill="#FD5B35" opacity=".35"/>
+      </g>
+      <!-- name tag -->
+      <rect x="-60" y="1340" width="70" height="30" rx="6" fill="#FFD45C"/>
+    </g>
+  </g>
+
+  <!-- counter -->
+  <rect x="80" y="1420" width="560" height="270" rx="20" fill="#173336"/>
+  <rect x="60" y="1400" width="600" height="44" rx="16" fill="#FD5B35"/>
+  <text x="360" y="1580" text-anchor="middle" font-family="P" font-weight="700" font-size="44" fill="#FCF5EB">RESEPSIONIS</text>
+  <!-- bell -->
+  <g id="bell" transform="translate(560,1400)"><path d="M-34 0 A34 34 0 0 1 34 0 Z" fill="#FFD45C"/><rect x="-42" y="-4" width="84" height="8" rx="4" fill="#E2B33F"/><circle cy="-38" r="7" fill="#E2B33F"/></g>
+
+  <!-- GUEST -->
+  <g id="guest" transform="translate(1300,0)">
+    <g id="guestBob">
+      <!-- suitcase -->
+      <g transform="translate(110,1560)"><rect x="-45" y="0" width="90" height="120" rx="14" fill="#FD5B35"/><rect x="-20" y="-30" width="40" height="34" rx="8" fill="none" stroke="#173336" stroke-width="8"/><line x1="-45" y1="40" x2="45" y2="40" stroke="#fff" stroke-width="6" opacity=".5"/><circle cx="-28" cy="128" r="9" fill="#173336"/><circle cx="28" cy="128" r="9" fill="#173336"/></g>
+      <!-- legs -->
+      <g id="legL" transform="translate(-30,1460)"><rect x="-22" y="0" width="44" height="210" rx="20" fill="#173336"/><ellipse cx="6" cy="215" rx="34" ry="16" fill="#2B2321"/></g>
+      <g id="legR" transform="translate(30,1460)"><rect x="-22" y="0" width="44" height="210" rx="20" fill="#173336"/><ellipse cx="6" cy="215" rx="34" ry="16" fill="#2B2321"/></g>
+      <!-- body -->
+      <rect x="-85" y="1230" width="170" height="250" rx="60" fill="#3B4CCA"/>
+      <!-- arms -->
+      <g id="guestArmL" transform="translate(-80,1260)"><rect x="-20" y="0" width="40" height="170" rx="20" fill="#3B4CCA"/><circle cx="0" cy="172" r="24" fill="#8D5A3B"/></g>
+      <g id="guestArmR" transform="translate(80,1260)"><rect x="-20" y="0" width="40" height="190" rx="20" fill="#3B4CCA"/><circle cx="0" cy="195" r="24" fill="#8D5A3B"/></g>
+      <!-- head -->
+      <g id="guestHead" transform="translate(0,1140)">
+        <rect x="-15" y="40" width="30" height="45" fill="#8D5A3B"/>
+        <circle r="82" fill="#8D5A3B"/>
+        <path d="M-84 -10 C-86 -60 -60 -70 -50 -60 L50 -60 C60 -70 86 -60 84 -10 Z" fill="#3A2A22"/>
+        <g id="guestHair" fill="#F4A259">
+          <circle cx="-72" cy="-42" r="28"/><circle cx="-52" cy="-78" r="30"/><circle cx="-16" cy="-98" r="30"/><circle cx="22" cy="-98" r="30"/>
+          <circle cx="56" cy="-78" r="30"/><circle cx="74" cy="-42" r="28"/><circle cx="-30" cy="-58" r="26"/><circle cx="10" cy="-64" r="28"/><circle cx="44" cy="-52" r="24"/>
+          <g fill="#FFD08A"><circle cx="-20" cy="-108" r="10"/><circle cx="30" cy="-104" r="8"/><circle cx="-60" cy="-88" r="8"/></g>
+        </g>
+        <g stroke="#1E1A19" stroke-width="6" fill="#ffffff" fill-opacity=".18"><circle cx="-30" cy="8" r="24"/><circle cx="30" cy="8" r="24"/><line x1="-6" y1="6" x2="6" y2="6"/></g>
+        <circle cx="82" cy="40" r="6" fill="#E8E8E8"/>
+        <g id="guestEyes"><ellipse cx="-28" cy="8" rx="9" ry="12" fill="#1E1A19"/><ellipse cx="28" cy="8" rx="9" ry="12" fill="#1E1A19"/></g>
+        <path id="guestMouth" d="M-20 40 Q0 50 20 40" stroke="#1E1A19" stroke-width="7" fill="none" stroke-linecap="round"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- sparkles -->
+  <g id="spark" opacity="0" fill="#FFD45C">
+    <path d="M560 1080 l12 30 30 12 -30 12 -12 30 -12 -30 -30 -12 30 -12z"/>
+    <path d="M480 1180 l8 20 20 8 -20 8 -8 20 -8 -20 -20 -8 20 -8z"/>
+    <path d="M650 1200 l8 20 20 8 -20 8 -8 20 -8 -20 -20 -8 20 -8z"/>
+  </g>
+</svg>
+
+<div class="phone" id="phone"><div class="scr">
+  <div class="t">Homestay Anda</div><div class="s">24 – 26 Des · 2 tamu</div>
+  <div class="room"><div class="sw" style="background:#7fc8c2"></div><div><div class="n">Kamar Standar</div><div class="p">Rp250.000/malam</div></div><div class="badge" id="b1">Penuh</div></div>
+  <div class="room"><div class="sw" style="background:#f6b98a"></div><div><div class="n">Kamar Deluxe</div><div class="p">Rp350.000/malam</div></div><div class="badge" id="b2">Penuh</div></div>
+  <div class="room"><div class="sw" style="background:#d9d4cc"></div><div><div class="n">Kamar Keluarga</div><div class="p">Rp500.000/malam</div></div><div class="badge" id="b3">Penuh</div></div>
+</div></div>
+
+<div class="cta" id="cta">
+  <div class="big">Libur ramai,<br>tim tetap tenang.</div>
+  <div class="btn">Coba demo gratis</div>
+  <div class="url">titikkumpul.id/layanan-penginapan</div>
+  <div class="sm">TK Penginapan · mulai Rp149rb/bulan</div>
+</div>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const io=x=>x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2;
+const back=x=>{const c=1.70158,c3=c+1;return 1+c3*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const seg=(t,a,b)=>cl((t-a)/(b-a));
+function caption(html){const c=$('cap'); if(c.dataset.h!==html){c.innerHTML=html;c.dataset.h=html;}}
+window.setT=function(t){
+  // captions with pop-in
+  let cp, cs;
+  if(t<2.6){caption('Libur ramai,<br><span class="hl">tim tetap tenang.</span>');cs=seg(t,.1,.6)}
+  else if(t<5.2){caption('Kamar penuh?<br><span class="hl">Calon tamu tahu sendiri.</span>');cs=seg(t,2.6,3.1)}
+  else {caption('Tim fokus melayani<br><span class="hl">tamu yang datang.</span>');cs=seg(t,5.2,5.7)}
+  const c=$('cap'); c.style.opacity=cs; c.style.transform=`translateY(${(1-back(cs))*40}px) scale(${.9+.1*back(cs)})`;
+
+  // staff idle breathing + blink
+  const br=Math.sin(t*2.2)*4;
+  $('staffBody').setAttribute('transform',`translate(0,${br})`);
+  const blink=(t%2.8)>2.65?0.1:1;
+  $('staffEyes').setAttribute('transform',`translate(0,5) scale(1,${blink}) translate(0,-5)`);
+  $('staffHead').setAttribute('transform',`translate(0,1170) rotate(${Math.sin(t*1.3)*3})`);
+
+  // hair motion
+  const sway=Math.sin(t*2.6)*2.5;
+  $('staffHairBack').setAttribute('transform',`rotate(${sway})`);
+  $('staffBangs').setAttribute('transform',`rotate(${sway*0.4})`);
+  // bell ding at 2.25
+  const bd=seg(t,2.25,2.75); $('bell').setAttribute('transform',`translate(560,1400) rotate(${Math.sin(bd*Math.PI*6)*14*(1-bd)})`);
+  // guest walk in 0.3-2.2
+  const w=io(seg(t,.3,2.2));
+  const gx=1300+(760-1300)*w;
+  const walking=t>.3&&t<2.2;
+  const step=walking?Math.sin(t*12):0;
+  $('guest').setAttribute('transform',`translate(${gx},0)`);
+  $('guestBob').setAttribute('transform',`translate(0,${walking?-Math.abs(step)*10:Math.sin(t*2)*3})`);
+  $('legL').setAttribute('transform',`translate(-30,1460) rotate(${step*18})`);
+  $('legR').setAttribute('transform',`translate(30,1460) rotate(${-step*18})`);
+  const hairLag=walking?Math.abs(Math.sin(t*12-0.6))*-8+4:Math.sin(t*2-0.5)*2;
+  $('guestHair').setAttribute('transform',`translate(0,${hairLag}) scale(1,${1+(walking?0.03*Math.sin(t*24):0)})`);
+  const gblink=((t+1.1)%3.1)>2.95?0.1:1;
+  $('guestEyes').setAttribute('transform',`translate(0,8) scale(1,${gblink}) translate(0,-8)`);
+
+  // phone appears 2.6-5.2
+  const pin=back(seg(t,2.6,3.1)), pout=io(seg(t,5.0,5.4));
+  const ph=$('phone'); ph.style.opacity=Math.min(seg(t,2.6,2.9),1-pout);
+  ph.style.transform=`translateY(${(1-pin)*120 + pout*-60}px) scale(${.85+.15*pin})`;
+  [['b1',3.3],['b2',3.75],['b3',4.2]].forEach(([id,s])=>{const k=back(seg(t,s,s+.35));$(id).style.transform=`translateY(-50%) scale(${k}) rotate(${(1-k)*-20}deg)`});
+  // scene dims a bit while phone is shown
+  $('scene').style.opacity=1-0.55*Math.min(seg(t,2.6,2.9),1-pout);
+
+  // handover key 5.4-6.6 : staff arm rotates toward guest
+  const hk=io(seg(t,5.4,6.2)), hb=io(seg(t,6.6,7.1));
+  const ang=-(hk-hb*0.6)*75;
+  $('staffArm').setAttribute('transform',`translate(95,1300) rotate(${ang})`);
+  $('key').setAttribute('opacity', t>5.4&&t<6.7?1:0);
+  // guest right arm reaches toward the counter
+  const gr=io(seg(t,5.7,6.3))*(1-io(seg(t,6.8,7.2)));
+  $('guestArmL').setAttribute('transform',`translate(-80,1260) rotate(${gr*55})`);
+  // happy mouth after handover
+  const happy=seg(t,6.2,6.5);
+  $('guestMouth').setAttribute('d',`M-24 38 Q0 ${48+happy*20} 24 38`);
+  $('staffMouth').setAttribute('d',`M-26 38 Q0 ${58+happy*8} 26 38`);
+  // sparkles
+  const sp=seg(t,6.2,6.5)*(1-seg(t,7.1,7.4));
+  const sg=$('spark'); sg.setAttribute('opacity',sp); sg.setAttribute('transform',`translate(0,${-seg(t,6.2,7.4)*40})`);
+
+  // CTA 7.4+
+  const ct=io(seg(t,7.4,7.9)); const cta=$('cta'); cta.style.opacity=ct; cta.style.transform=`translateY(${(1-ct)*80}px)`;
+};
+window.setT(0);
+</script></body></html>
