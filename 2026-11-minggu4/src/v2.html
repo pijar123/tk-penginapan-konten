@@ -1,0 +1,183 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:P;src:url(file:///usr/share/fonts/truetype/google-fonts/Poppins-Bold.ttf);font-weight:700}
+@font-face{font-family:P;src:url(file:///usr/share/fonts/truetype/google-fonts/Poppins-Medium.ttf);font-weight:500}
+@font-face{font-family:P;src:url(file:///usr/share/fonts/truetype/google-fonts/Poppins-Regular.ttf);font-weight:400}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#FCF5EB;font-family:P}
+#stage{position:absolute;inset:0}
+.ov{position:absolute;top:70px;left:50%;transform:translateX(-50%);background:#16202A;color:#fff;border-radius:22px;padding:16px 34px;text-align:center;z-index:40}
+.ov .h{font-weight:700;font-size:30px;display:flex;gap:12px;align-items:center;justify-content:center}
+.ov .tag{background:#FFD45C;color:#16202A;border-radius:8px;padding:1px 10px;font-size:22px}
+.ov .w{font-weight:400;font-size:24px;opacity:.9;margin-top:2px}
+.cap{position:absolute;left:0;right:0;top:250px;text-align:center;font-weight:700;color:#173336;font-size:74px;line-height:1.15;z-index:15}
+.cap .hl{background:#FFD45C;padding:0 14px;border-radius:10px}
+.phone{position:absolute;left:50%;top:560px;width:600px;height:480px;margin-left:-300px;background:#16202A;border-radius:56px;padding:18px;box-sizing:border-box;z-index:12;box-shadow:0 30px 60px rgba(0,0,0,.18)}
+.scr{background:#fff;border-radius:40px;width:100%;height:100%;padding:34px 26px;box-sizing:border-box}
+.scr .t{font-weight:700;font-size:30px;color:#173336}
+.scr .s{font-size:20px;color:#7a8580;margin-bottom:18px}
+.room{display:flex;align-items:center;gap:16px;border:2px solid #eee6da;border-radius:20px;padding:14px;margin-bottom:14px;position:relative}
+.room .sw{width:64px;height:52px;border-radius:12px}
+.room .n{font-weight:700;font-size:24px;color:#173336}
+.room .p{font-size:18px;color:#7a8580}
+.badge{position:absolute;right:14px;top:50%;background:#FD5B35;color:#fff;font-weight:700;font-size:20px;border-radius:12px;padding:6px 14px;transform:translateY(-50%) scale(0)}
+.cta{position:absolute;left:0;right:0;top:0;bottom:0;background:#13343B;z-index:30;opacity:0;display:flex;flex-direction:column;justify-content:center;align-items:center;color:#fff}
+.cta .big{font-weight:700;font-size:72px;text-align:center;line-height:1.15}
+.cta .btn{margin-top:60px;background:#FD5B35;border-radius:60px;padding:28px 64px;font-weight:700;font-size:52px}
+.cta .url{margin-top:40px;font-weight:700;font-size:44px}
+.cta .sm{margin-top:18px;font-size:30px;opacity:.75}
+
+.phone{top:470px;height:800px}
+.scr{position:relative;overflow:hidden}
+.pane{position:absolute;inset:0;padding:30px 26px;box-sizing:border-box}
+.msg{border-radius:20px;padding:14px 18px;margin-bottom:16px;font-size:27px;color:#173336;background:#F1ECE4;max-width:88%}
+.msg b{display:block;font-size:21px;color:#15787D;margin-bottom:4px}
+.msg .tm{font-size:16px;color:#9aa;text-align:right}
+.stampx{position:absolute;left:50%;top:470px;transform:translate(-50%,-50%) rotate(-12deg) scale(0);border:8px solid #FD5B35;color:#FD5B35;font-weight:700;font-size:64px;padding:4px 28px;border-radius:16px;background:rgba(255,255,255,.85)}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;text-align:center;font-size:20px;color:#7a8580;margin:8px 0 18px}
+.cal div{height:40px;line-height:40px;border-radius:10px}
+.cal .hd{font-size:15px;height:24px;line-height:24px}
+.cal .on{background:#FD5B35;color:#fff;font-weight:700}
+.room .badge.g{background:#2DBE78}
+.room.sel{border-color:#FD5B35;background:#FFF1EC}
+</style></head><body><div id="stage"><div class="ov"><div class="h"><span class="tag">IG</span><span class="tag">TikTok</span>@tk.penginapan</div><div class="w">titikkumpul.id/layanan-penginapan</div></div><div class="cap" id="cap"></div><style>
+.pill{display:inline-block;background:#15787D;color:#fff;font-size:34px;border-radius:40px;padding:4px 26px;margin-bottom:10px}
+.cap{font-size:68px}
+.ph2{position:absolute;left:400px;top:560px;width:600px;height:1110px;background:#16202A;border-radius:64px;padding:18px;box-sizing:border-box;z-index:12;box-shadow:0 30px 60px rgba(0,0,0,.18)}
+.s2{position:relative;width:100%;height:100%;border-radius:48px;overflow:hidden;background:#0f1418}
+.vf{position:absolute;left:0;top:120px;width:564px;height:760px;overflow:hidden;background:#000}
+.camtop{position:absolute;top:40px;left:0;right:0;text-align:center;color:#FFD45C;font-size:24px;font-weight:500}
+.shut{position:absolute;left:50%;bottom:70px;width:110px;height:110px;margin-left:-55px;border-radius:50%;border:8px solid #fff;box-sizing:border-box}
+.shut i{position:absolute;inset:8px;border-radius:50%;background:#fff}
+.grid{position:absolute;inset:0;opacity:0}
+.flash{position:absolute;inset:0;background:#fff;opacity:0}
+.app{position:absolute;inset:0;background:#fff;padding:60px 28px;box-sizing:border-box;opacity:0}
+.app .t{font-weight:700;font-size:34px;color:#173336}.app .s{font-size:22px;color:#7a8580;margin-bottom:22px}
+.card{border:2px solid #eee6da;border-radius:28px;overflow:hidden}
+.card .info{padding:20px 24px}.card .n{font-weight:700;font-size:32px;color:#173336}.card .p{font-size:24px;color:#7a8580}
+.tag2{display:inline-block;background:#2DBE78;color:#fff;font-weight:700;font-size:20px;border-radius:10px;padding:4px 12px;margin-top:10px}
+.btn2{margin-top:24px;background:#FD5B35;color:#fff;font-weight:700;font-size:30px;text-align:center;border-radius:20px;padding:20px}
+.chk{position:absolute;right:30px;top:20px;width:76px;height:76px;border-radius:50%;background:#2DBE78;color:#fff;font-size:50px;font-weight:700;display:flex;align-items:center;justify-content:center;transform:scale(0);z-index:3}
+.bad{position:absolute;right:30px;top:20px;width:76px;height:76px;border-radius:50%;background:#FD5B35;color:#fff;font-size:48px;font-weight:700;display:flex;align-items:center;justify-content:center;transform:scale(0);z-index:3}
+</style>
+<svg width="1080" height="1920" style="position:absolute;inset:0" id="scene"><rect x="0" y="1700" width="1080" height="220" fill="#E9DCC8"/>
+<g transform="translate(200,800) scale(.62)"><g id="r_staff">
+    <g id="r_staffBody">
+      <rect x="-110" y="1260" width="220" height="260" rx="70" fill="#15787D"/>
+      <path d="M-30 1262 L0 1310 L30 1262 Z" fill="#fff"/>
+      <!-- arm right (towards guest) -->
+      <g id="r_staffArm" transform="translate(95,1300)"><rect x="-22" y="0" width="44" height="150" rx="22" fill="#15787D"/><circle cx="0" cy="155" r="26" fill="#C98B5F"/>
+        <g id="r_key" opacity="0" transform="translate(0,175)"><circle cx="0" cy="0" r="16" fill="none" stroke="#FFD45C" stroke-width="8"/><rect x="-4" y="14" width="8" height="40" fill="#FFD45C"/><rect x="4" y="40" width="14" height="7" fill="#FFD45C"/></g>
+      </g>
+      <g transform="translate(-95,1300)"><rect x="-22" y="0" width="44" height="140" rx="22" fill="#15787D"/></g>
+      <!-- head -->
+      <g id="r_staffHead" transform="translate(0,1170)">
+        <g id="r_staffHairBack"><path d="M-108 -20 C-114 -118 114 -118 108 -20 L116 62 L96 52 L108 108 L82 88 L84 128 L56 104 L-56 104 L-84 128 L-82 88 L-108 108 L-96 52 L-116 62 Z" fill="#B58BF5"/></g>
+        <rect x="-16" y="40" width="32" height="40" fill="#C98B5F"/>
+        <circle r="88" fill="#C98B5F"/>
+        <g id="r_staffBangs"><path d="M-98 -8 C-96 -112 96 -112 98 -8 C84 -56 34 -74 10 -44 L0 -22 L-10 -44 C-34 -74 -84 -56 -98 -8 Z" fill="#B58BF5"/>
+          <path d="M-60 -72 C-30 -96 20 -98 50 -80" stroke="#E4CCFF" stroke-width="10" fill="none" stroke-linecap="round"/></g>
+        <circle cx="-90" cy="48" r="15" fill="none" stroke="#FFD45C" stroke-width="6"/><circle cx="90" cy="48" r="15" fill="none" stroke="#FFD45C" stroke-width="6"/>
+        <g id="r_staffEyes"><ellipse cx="-30" cy="5" rx="9" ry="12" fill="#2B2321"/><ellipse cx="30" cy="5" rx="9" ry="12" fill="#2B2321"/></g>
+        <path id="r_staffMouth" d="M-26 38 Q0 58 26 38" stroke="#2B2321" stroke-width="7" fill="none" stroke-linecap="round"/>
+        <circle cx="-52" cy="34" r="12" fill="#FD5B35" opacity=".35"/><circle cx="52" cy="34" r="12" fill="#FD5B35" opacity=".35"/>
+      </g>
+      <!-- name tag -->
+      <rect x="-60" y="1340" width="70" height="30" rx="6" fill="#FFD45C"/>
+    </g>
+  </g>
+
+  </g>
+<g id="star" opacity="0" fill="#FFD45C"><path d="M330 1180 l10 26 26 10 -26 10 -10 26 -10 -26 -26 -10 26 -10z"/><path d="M80 1240 l7 18 18 7 -18 7 -7 18 -7 -18 -18 -7 18 -7z"/></g>
+</svg>
+<div class="ph2" id="ph"><div class="s2">
+ <div class="camtop">FOTO · 1x</div>
+ <div class="vf"><svg id="room" width="564" height="760" viewBox="0 0 564 760"><g id="rg">
+   <rect x="-400" y="-400" width="1400" height="820" fill="#F1E3CF"/>
+   <rect x="-400" y="420" width="1400" height="800" fill="#C9A982"/>
+   <g fill="#B48F66" opacity=".5"><rect x="-400" y="500" width="1400" height="6"/><rect x="-400" y="600" width="1400" height="6"/><rect x="-400" y="720" width="1400" height="6"/></g>
+   <rect x="300" y="80" width="200" height="230" rx="10" fill="#BFE3E0"/><circle cx="430" cy="140" r="30" fill="#FFD45C" id="sunw"/>
+   <rect x="300" y="80" width="200" height="230" rx="10" fill="none" stroke="#fff" stroke-width="12"/><line x1="400" y1="80" x2="400" y2="310" stroke="#fff" stroke-width="8"/>
+   <rect id="curL" x="290" y="66" width="110" height="260" fill="#7A5AA8"/><rect id="curR" x="400" y="66" width="110" height="260" fill="#7A5AA8"/>
+   <rect x="284" y="58" width="232" height="14" rx="7" fill="#5B4636"/>
+   <polygon id="beam" points="300,310 500,310 620,760 120,760" fill="#FFF6C9" opacity="0"/>
+   <rect x="20" y="300" width="300" height="70" rx="18" fill="#5B4636"/>
+   <rect x="0" y="360" width="340" height="150" rx="22" fill="#fff"/><rect x="0" y="420" width="340" height="90" rx="10" fill="#15787D"/>
+   <rect x="30" y="320" width="110" height="60" rx="22" fill="#FCF5EB"/><rect x="170" y="320" width="110" height="60" rx="22" fill="#FCF5EB"/>
+   <rect x="10" y="500" width="22" height="50" fill="#5B4636"/><rect x="308" y="500" width="22" height="50" fill="#5B4636"/>
+   <rect x="380" y="400" width="100" height="110" rx="12" fill="#E9DCC8"/><path d="M430 400 l-30 -60 h60z" fill="#FFD45C"/><rect x="426" y="340" width="8" height="60" fill="#5B4636"/>
+   <ellipse cx="-60" cy="480" rx="40" ry="16" fill="#2DBE78"/>
+ </g>
+ <rect id="dim" x="0" y="0" width="564" height="760" fill="#1b1f2a" opacity=".6"/>
+ </svg>
+ <svg class="grid" id="grid" width="564" height="760"><g stroke="#fff" stroke-width="2" opacity=".7"><line x1="188" y1="0" x2="188" y2="760"/><line x1="376" y1="0" x2="376" y2="760"/><line x1="0" y1="253" x2="564" y2="253"/><line x1="0" y1="506" x2="564" y2="506"/></g></svg>
+ <div class="chk" id="ok">✓</div><div class="bad" id="no">✕</div>
+ <div class="flash" id="fl"></div>
+ </div>
+ <div class="shut" id="sh"><i></i></div>
+ <div class="app" id="app"><div class="t">Homestay Anda</div><div class="s">24 – 26 Des · 2 tamu</div>
+  <div class="card"><svg width="560" height="380" viewBox="0 30 564 640" preserveAspectRatio="xMidYMid slice" id="thumb"></svg>
+   <div class="info"><div class="n">Kamar Deluxe</div><div class="p">Rp350.000/malam</div><div class="tag2">Tersedia</div></div></div>
+  <div class="btn2" id="pesan">Pesan sekarang</div></div>
+</div></div>
+<div class="cta" id="cta">
+  <div class="big">Foto jelas,<br>tamu nggak ragu.</div>
+  <div class="btn">Coba demo gratis</div>
+  <div class="url">titikkumpul.id/layanan-penginapan</div>
+  <div class="sm">TK Penginapan · mulai Rp149rb/bulan</div>
+</div>
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const io=x=>x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2;
+const back=x=>{const c=1.70158,c3=c+1;return 1+c3*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const seg=(t,a,b)=>cl((t-a)/(b-a));
+function caption(html){const c=$('cap'); if(c.dataset.h!==html){c.innerHTML=html;c.dataset.h=html;}}
+const CAPS=[[0,'Foto kamar pakai HP,<br><span class="hl">cukup 15 detik.</span>'],
+ [2.8,'<span class="pill">Tips 1</span><br>Buka tirai,<br><span class="hl">pakai cahaya jendela.</span>'],
+ [6.6,'<span class="pill">Tips 2</span><br>Foto dari pojok,<br><span class="hl">kamar terlihat luas.</span>'],
+ [10.4,'<span class="pill">Tips 3</span><br>HP lurus,<br><span class="hl">dinding tidak miring.</span>'],
+ [14.0,'Pasang di halaman pesan,<br><span class="hl">tamu langsung pesan.</span>']];
+window.setT=function(t){
+  let k=0; CAPS.forEach((c,i)=>{if(t>=c[0])k=i}); caption(CAPS[k][1]);
+  const cs=seg(t,CAPS[k][0]+.1,CAPS[k][0]+.6); const c=$('cap'); c.style.opacity=cs; c.style.transform=`translateY(${(1-back(cs))*40}px) scale(${.9+.1*back(cs)})`;
+  c.style.top=k>0&&k<4?'190px':'250px';
+  // rara small
+  $('r_staffBody').setAttribute('transform',`translate(0,${Math.sin(t*2.2)*4})`);
+  const blink=(t%2.8)>2.65?0.1:1; $('r_staffEyes').setAttribute('transform',`translate(0,5) scale(1,${blink}) translate(0,-5)`);
+  $('r_staffHead').setAttribute('transform',`translate(0,1170) rotate(${Math.sin(t*1.3)*4})`);
+  const sw=Math.sin(t*2.6)*2.5; $('r_staffHairBack').setAttribute('transform',`rotate(${sw})`); $('r_staffBangs').setAttribute('transform',`rotate(${sw*.4})`);
+  // Rara points to phone at each tip
+  const pt=[2.9,6.7,10.5,14.1].reduce((a,s)=>Math.max(a,io(seg(t,s,s+.4))*(1-io(seg(t,s+1.6,s+2.0)))),0);
+  $('r_staffArm').setAttribute('transform',`translate(95,1300) rotate(${-pt*110})`);
+  const talk=(t>2.8&&t<17.4)?Math.abs(Math.sin(t*9))*pt:0;
+  $('r_staffMouth').setAttribute('d',`M-26 38 Q0 ${58+talk*10} 26 38`);
+  // phone in
+  const pin=back(seg(t,0,.5)); $('ph').style.transform=`translateY(${(1-pin)*140}px)`; $('ph').style.opacity=seg(t,0,.25);
+  // tip1: curtains open 3.4-4.6, brightness
+  const op=io(seg(t,3.4,4.6)); $('curL').setAttribute('x',290-op*95); $('curL').setAttribute('width',110-op*80); $('curR').setAttribute('x',400+op*95-0); $('curR').setAttribute('width',110-op*80);
+  $('dim').setAttribute('opacity',.6*(1-op)); $('beam').setAttribute('opacity',.45*op);
+  // tip2: corner view: before 6.6 close-up (scale 1.7 shifted), after transition 7.2-8.4 -> 1
+  const z=io(seg(t,7.2,8.4)); const sc=t<6.6?1.0:1.0; let S=1, tx=0, ty=0;
+  if(t<6.6){S=1.55;tx=-120;ty=-180} else {S=1.55-.55*z; tx=-120*(1-z); ty=-180*(1-z)}
+  // tip3: tilt before 10.4, straighten 11.0-12.0
+  const st=io(seg(t,11.0,12.0)); const rot=t<10.4?-7:-7*(1-st);
+  const rotA=t<2.8?-7:rot;
+  $('rg').setAttribute('transform',`translate(282,380) rotate(${rotA}) scale(${S}) translate(${-282+tx/S},${-380+ty/S})`);
+  $('grid').style.opacity=seg(t,10.6,10.9)*(1-seg(t,13.6,13.9));
+  // check/cross marks
+  const marks=[[0.9,2.6,'no'],[4.7,6.3,'ok'],[8.5,10.1,'ok'],[12.1,13.7,'ok']];
+  let okS=0,noS=0; marks.forEach(([a,b,id])=>{const v=back(seg(t,a,a+.3))*(1-seg(t,b,b+.2)); if(id=='ok')okS=Math.max(okS,v); else noS=Math.max(noS,v)});
+  $('ok').style.transform=`scale(${okS})`; $('no').style.transform=`scale(${noS})`;
+  // shutter + flash at 12.8
+  $('sh').style.transform=`scale(${1-.15*Math.sin(Math.PI*seg(t,12.75,12.95))})`; $('fl').style.opacity=.9*(seg(t,12.8,12.85)*(1-seg(t,12.85,13.2)));
+  // app 14.0+
+  if(t>=13.9&&!$('thumb').dataset.d){$('thumb').innerHTML=$('room').innerHTML.replace('id="rg"','').replace(/id="[^"]+"/g,'');$('thumb').dataset.d=1}
+  const ap=seg(t,14.0,14.4); $('app').style.opacity=ap; $('app').style.transform=`translateY(${(1-io(ap))*60}px)`;
+  $('pesan').style.transform=`scale(${1-.06*Math.sin(Math.PI*seg(t,15.8,16.1))})`;
+  $('star').setAttribute('opacity',seg(t,16.0,16.3)*(1-seg(t,17.0,17.3)));
+  const ct=io(seg(t,17.4,17.9)); $('cta').style.opacity=ct; $('cta').style.transform=`translateY(${(1-ct)*80}px)`;
+};
+window.setT(0);
+</script></body></html>

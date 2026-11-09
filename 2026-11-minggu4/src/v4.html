@@ -1,0 +1,266 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:P;src:url(file:///usr/share/fonts/truetype/google-fonts/Poppins-Bold.ttf);font-weight:700}
+@font-face{font-family:P;src:url(file:///usr/share/fonts/truetype/google-fonts/Poppins-Medium.ttf);font-weight:500}
+@font-face{font-family:P;src:url(file:///usr/share/fonts/truetype/google-fonts/Poppins-Regular.ttf);font-weight:400}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#FCF5EB;font-family:P}
+#stage{position:absolute;inset:0}
+.ov{position:absolute;top:70px;left:50%;transform:translateX(-50%);background:#16202A;color:#fff;border-radius:22px;padding:16px 34px;text-align:center;z-index:40}
+.ov .h{font-weight:700;font-size:30px;display:flex;gap:12px;align-items:center;justify-content:center}
+.ov .tag{background:#FFD45C;color:#16202A;border-radius:8px;padding:1px 10px;font-size:22px}
+.ov .w{font-weight:400;font-size:24px;opacity:.9;margin-top:2px}
+.cap{position:absolute;left:0;right:0;top:250px;text-align:center;font-weight:700;color:#173336;font-size:74px;line-height:1.15;z-index:15}
+.cap .hl{background:#FFD45C;padding:0 14px;border-radius:10px}
+.phone{position:absolute;left:50%;top:560px;width:600px;height:480px;margin-left:-300px;background:#16202A;border-radius:56px;padding:18px;box-sizing:border-box;z-index:12;box-shadow:0 30px 60px rgba(0,0,0,.18)}
+.scr{background:#fff;border-radius:40px;width:100%;height:100%;padding:34px 26px;box-sizing:border-box}
+.scr .t{font-weight:700;font-size:30px;color:#173336}
+.scr .s{font-size:20px;color:#7a8580;margin-bottom:18px}
+.room{display:flex;align-items:center;gap:16px;border:2px solid #eee6da;border-radius:20px;padding:14px;margin-bottom:14px;position:relative}
+.room .sw{width:64px;height:52px;border-radius:12px}
+.room .n{font-weight:700;font-size:24px;color:#173336}
+.room .p{font-size:18px;color:#7a8580}
+.badge{position:absolute;right:14px;top:50%;background:#FD5B35;color:#fff;font-weight:700;font-size:20px;border-radius:12px;padding:6px 14px;transform:translateY(-50%) scale(0)}
+.cta{position:absolute;left:0;right:0;top:0;bottom:0;background:#13343B;z-index:30;opacity:0;display:flex;flex-direction:column;justify-content:center;align-items:center;color:#fff}
+.cta .big{font-weight:700;font-size:72px;text-align:center;line-height:1.15}
+.cta .btn{margin-top:60px;background:#FD5B35;border-radius:60px;padding:28px 64px;font-weight:700;font-size:52px}
+.cta .url{margin-top:40px;font-weight:700;font-size:44px}
+.cta .sm{margin-top:18px;font-size:30px;opacity:.75}
+
+.phone{top:470px;height:800px}
+.scr{position:relative;overflow:hidden}
+.pane{position:absolute;inset:0;padding:30px 26px;box-sizing:border-box}
+.msg{border-radius:20px;padding:14px 18px;margin-bottom:16px;font-size:27px;color:#173336;background:#F1ECE4;max-width:88%}
+.msg b{display:block;font-size:21px;color:#15787D;margin-bottom:4px}
+.msg .tm{font-size:16px;color:#9aa;text-align:right}
+.stampx{position:absolute;left:50%;top:470px;transform:translate(-50%,-50%) rotate(-12deg) scale(0);border:8px solid #FD5B35;color:#FD5B35;font-weight:700;font-size:64px;padding:4px 28px;border-radius:16px;background:rgba(255,255,255,.85)}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;text-align:center;font-size:20px;color:#7a8580;margin:8px 0 18px}
+.cal div{height:40px;line-height:40px;border-radius:10px}
+.cal .hd{font-size:15px;height:24px;line-height:24px}
+.cal .on{background:#FD5B35;color:#fff;font-weight:700}
+.room .badge.g{background:#2DBE78}
+.room.sel{border-color:#FD5B35;background:#FFF1EC}
+</style></head><body><div id="stage"><div class="ov"><div class="h"><span class="tag">IG</span><span class="tag">TikTok</span>@tk.penginapan</div><div class="w">titikkumpul.id/layanan-penginapan</div></div><div class="cap" id="cap"></div><style>
+body,html{background:#16202A}
+.cap{color:#fff}
+.cap.dk{color:#173336}
+.cap .hl{color:#16202A}
+#bgsvg{position:absolute;inset:0}
+.ph4{position:absolute;left:330px;top:540px;width:600px;height:1000px;background:#0d1319;border-radius:60px;padding:18px;box-sizing:border-box;z-index:12;box-shadow:0 0 90px rgba(127,200,240,.35);opacity:0}
+.s4{position:relative;width:100%;height:100%;border-radius:44px;overflow:hidden;background:#fff}
+.sb{display:flex;justify-content:space-between;padding:22px 34px 0;font-weight:700;font-size:22px;color:#173336}
+.pg{position:absolute;left:0;right:0;top:70px;bottom:0;padding:20px 28px;box-sizing:border-box;opacity:0}
+.pg .t{font-weight:700;font-size:32px;color:#173336}.pg .s{font-size:21px;color:#7a8580;margin-bottom:18px}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;text-align:center;font-size:21px;color:#7a8580}
+.cal div{height:44px;line-height:44px;border-radius:10px}.cal .hd{font-size:15px;height:24px;line-height:24px}
+.cal .on{background:#FD5B35;color:#fff;font-weight:700}.cal .rg{background:#FFE1D8;color:#173336}
+.bt{position:absolute;left:28px;right:28px;bottom:40px;background:#FD5B35;color:#fff;font-weight:700;font-size:28px;text-align:center;border-radius:20px;padding:20px}
+.room{display:flex;align-items:center;gap:16px;border:2px solid #eee6da;border-radius:20px;padding:16px;margin-bottom:16px}
+.room .sw{width:70px;height:58px;border-radius:12px}.room .n{font-weight:700;font-size:26px;color:#173336}.room .p{font-size:19px;color:#7a8580}
+.room .tg{margin-left:auto;font-weight:700;font-size:18px;border-radius:10px;padding:5px 12px;color:#fff}
+.room.sel{border-color:#FD5B35;background:#FFF1EC}
+.tap{position:absolute;width:70px;height:70px;border-radius:50%;background:rgba(253,91,53,.35);border:4px solid #FD5B35;transform:scale(0);z-index:5}
+.okc{width:140px;height:140px;border-radius:50%;background:#2DBE78;color:#fff;font-size:90px;font-weight:700;display:flex;align-items:center;justify-content:center;margin:40px auto 24px}
+.nota{border:2px dashed #cfc5b5;border-radius:18px;padding:18px 22px;font-size:22px;color:#173336;line-height:1.7}
+.nota b{float:right}
+.notif{position:absolute;left:90px;right:90px;top:560px;background:#fff;border-radius:34px;padding:26px 30px;box-shadow:0 20px 50px rgba(0,0,0,.18);z-index:14;opacity:0;display:flex;gap:20px;align-items:center}
+.notif .ic{flex:none;width:84px;height:84px;border-radius:20px;background:#15787D;color:#FFD45C;font-weight:700;font-size:34px;display:flex;align-items:center;justify-content:center}
+.notif .a{font-weight:700;font-size:30px;color:#173336}.notif .b{font-size:24px;color:#7a8580;line-height:1.35}
+</style>
+<svg id="bgsvg" width="1080" height="1920" viewBox="0 0 1080 1920">
+ <rect id="sky" width="1080" height="1920" fill="#16202A"/>
+ <g id="night">
+  <rect x="80" y="560" width="300" height="320" rx="24" fill="#24344A"/>
+  <circle id="moon" cx="270" cy="660" r="46" fill="#FFF3C4"/><circle cx="292" cy="646" r="40" fill="#24344A"/>
+  <g fill="#FFF3C4" id="stars"><circle cx="140" cy="620" r="5"/><circle cx="180" cy="760" r="4"/><circle cx="330" cy="800" r="5"/><circle cx="120" cy="840" r="3"/></g>
+  <rect x="80" y="560" width="300" height="320" rx="24" fill="none" stroke="#3B4F66" stroke-width="12"/><line x1="230" y1="560" x2="230" y2="880" stroke="#3B4F66" stroke-width="10"/>
+ </g>
+ <g id="day" opacity="0">
+  <rect width="1080" height="1920" fill="#FCF5EB"/>
+  <rect x="80" y="560" width="300" height="320" rx="24" fill="#BFE3E0"/>
+  <circle id="sun" cx="300" cy="840" r="50" fill="#FFD45C"/>
+  <rect x="80" y="560" width="300" height="320" rx="24" fill="none" stroke="#15787D" stroke-width="12"/><line x1="230" y1="560" x2="230" y2="880" stroke="#15787D" stroke-width="10"/>
+ </g>
+ <!-- clock -->
+ <g transform="translate(800,700)"><rect x="-150" y="-70" width="300" height="140" rx="24" id="clkbg" fill="#0d1319"/><text id="clk" x="0" y="30" text-anchor="middle" font-family="P" font-weight="700" font-size="84" fill="#FD5B35">02.00</text></g>
+ <!-- bedroom -->
+ <g id="bed">
+  <rect x="120" y="1180" width="40" height="460" rx="12" fill="#5B4636"/>
+  <rect x="140" y="1440" width="860" height="160" rx="24" fill="#5B4636"/>
+  <rect x="160" y="1390" width="820" height="90" rx="30" fill="#FCF5EB"/>
+  <rect x="180" y="1300" width="230" height="110" rx="44" fill="#E9DCC8"/>
+  <g id="jsleep"></g>
+  <g id="jsit"></g>
+  <path id="blanket" d="M360 1300 Q560 1250 980 1300 L990 1490 L360 1490 Z" fill="#15787D"/>
+  <g fill="#0f5c60" id="bstripe"><rect x="420" y="1340" width="540" height="16" rx="8"/></g>
+  <rect x="140" y="1580" width="40" height="120" fill="#5B4636"/><rect x="960" y="1580" width="40" height="120" fill="#5B4636"/>
+ </g>
+ <rect x="0" y="1700" width="1080" height="220" id="floor" fill="#0f171f"/>
+ <g id="zz" font-family="P" font-weight="700" fill="#BFE3E0"><text id="z1" font-size="60">Z</text><text id="z2" font-size="46">z</text><text id="z3" font-size="36">z</text></g>
+ <!-- bimo scene -->
+ <g id="bscene" opacity="0"><rect width="1080" height="1920" fill="#1f2340"/><rect x="0" y="1700" width="1080" height="220" fill="#151830"/>
+   <g transform="translate(120,600)"><rect x="0" y="0" width="70" height="110" rx="8" fill="#FFD45C" opacity=".9"/><rect x="30" y="110" width="10" height="200" fill="#3B3F66"/></g>
+   <g id="bimo"></g></g>
+ <g id="spark" opacity="0" fill="#FFD45C"><path d="M200 1080 l12 30 30 12 -30 12 -12 30 -12 -30 -30 -12 30 -12z"/><path d="M880 1030 l8 20 20 8 -20 8 -8 20 -8 -20 -20 -8 20 -8z"/></g>
+</svg>
+<div class="ph4" id="ph"><div class="s4">
+ <div class="sb"><span id="ptime">02.01</span><span>●●● ▮</span></div>
+ <div class="pg" id="pg1"><div class="t">Homestay Anda</div><div class="s">Pilih tanggal menginap</div><div class="cal" id="cal"></div><div class="bt">Cari kamar</div></div>
+ <div class="pg" id="pg2"><div class="t">Kamar tersedia</div><div class="s">24 – 26 Des · 2 malam</div>
+  <div class="room"><div class="sw" style="background:#7fc8c2"></div><div><div class="n">Kamar Standar</div><div class="p">Rp250.000/malam</div></div><div class="tg" style="background:#FD5B35">Penuh</div></div>
+  <div class="room" id="rd"><div class="sw" style="background:#f6b98a"></div><div><div class="n">Kamar Deluxe</div><div class="p">Rp350.000/malam</div></div><div class="tg" style="background:#2DBE78">Tersedia</div></div>
+  <div class="room"><div class="sw" style="background:#d9d4cc"></div><div><div class="n">Kamar Keluarga</div><div class="p">Rp500.000/malam</div></div><div class="tg" style="background:#2DBE78">Tersedia</div></div>
+  <div class="bt">Lanjut bayar</div></div>
+ <div class="pg" id="pg3"><div class="t">Bayar dengan QRIS</div><div class="s">Kamar Deluxe · 2 malam</div>
+  <svg width="300" height="300" style="display:block;margin:10px auto" id="qr"></svg>
+  <div style="text-align:center;font-weight:700;font-size:40px;color:#173336">Rp700.000</div><div class="bt">Sudah bayar</div></div>
+ <div class="pg" id="pg4" style="text-align:left"><div class="okc" id="okc">✓</div><div class="t" style="text-align:center">Pesanan berhasil!</div><div class="s" style="text-align:center">Nota otomatis terkirim</div>
+  <div class="nota">Kamar Deluxe <b>24–26 Des</b><br>2 malam <b>Rp700.000</b><br>Bayar <b>QRIS</b></div></div>
+ <div class="tap" id="tp"></div>
+</div></div>
+<div class="notif" id="nf"><div class="ic">TK</div><div><div class="a">Pesanan baru masuk</div><div class="b">Kamar Deluxe · 24–26 Des<br>QRIS · nota otomatis terkirim</div></div></div>
+<div class="cta" id="cta">
+  <div class="big">Tidur nyenyak,<br>pesanan tetap masuk.</div>
+  <div class="btn">Coba demo gratis</div>
+  <div class="url">titikkumpul.id/layanan-penginapan</div>
+  <div class="sm">TK Penginapan · mulai Rp149rb/bulan</div>
+</div>
+</div>
+<script>
+const NAVY='#16202A', O='';
+function arm(x,y,ang,len,col,skin,prop=''){return `<g transform="translate(${x},${y}) rotate(${ang})"><rect x="-24" y="-10" width="48" height="${len+10}" rx="24" fill="${col}" ${O}/><g transform="translate(0,${len})"><circle r="27" fill="${skin}" ${O}/>${prop}</g></g>`}
+function face(e,ink='#2B2321',glasses=false){
+  let eyes='',mouth='',extra='';
+  if(e==='sleep'){eyes=`<path d="M-44 4 Q-30 18 -16 4 M16 4 Q30 18 44 4" stroke="${ink}" stroke-width="8" fill="none" stroke-linecap="round"/>`}
+  else if(e==='happy'){eyes=`<path d="M-44 10 Q-30 -8 -16 10 M16 10 Q30 -8 44 10" stroke="${ink}" stroke-width="8" fill="none" stroke-linecap="round"/>`}
+  else if(e==='shock'){eyes=`<circle cx="-30" cy="4" r="19" fill="#fff" ${O}/><circle cx="30" cy="4" r="19" fill="#fff" ${O}/><circle cx="-30" cy="6" r="6" fill="${ink}"/><circle cx="30" cy="6" r="6" fill="${ink}"/>`}
+  else if(e==='squint'){eyes=`<path d="M-44 6 L-16 6 M16 6 L44 6" stroke="${ink}" stroke-width="8" stroke-linecap="round"/>`}
+  else {eyes=`<ellipse cx="-30" cy="5" rx="10" ry="13" fill="${ink}"/><ellipse cx="30" cy="5" rx="10" ry="13" fill="${ink}"/>`}
+  if(e==='worried'||e==='squint'||e==='shock'){extra+=`<path d="M-50 -24 L-14 -32 M14 -32 L50 -24" stroke="${ink}" stroke-width="7" stroke-linecap="round"/>`}
+  if(e==='happy'||e==='grin'){mouth=`<path d="M-30 30 Q0 78 30 30 Z" fill="${ink}"/><path d="M-16 48 Q0 66 16 48" fill="#FD7A5C"/>`}
+  else if(e==='sleep'){mouth=`<ellipse cx="0" cy="44" rx="9" ry="7" fill="${ink}"/>`}
+  else if(e==='shock'){mouth=`<ellipse cx="0" cy="46" rx="16" ry="20" fill="${ink}"/>`}
+  else if(e==='worried'||e==='squint'){mouth=`<path d="M-24 46 Q-12 36 0 46 Q12 56 24 46" stroke="${ink}" stroke-width="7" fill="none" stroke-linecap="round"/>`}
+  else {mouth=`<path d="M-26 36 Q0 58 26 36" stroke="${ink}" stroke-width="7" fill="none" stroke-linecap="round"/>`}
+  let cheeks=`<circle cx="-56" cy="32" r="13" fill="#FD5B35" opacity=".3"/><circle cx="56" cy="32" r="13" fill="#FD5B35" opacity=".3"/>`;
+  let g=glasses?`<g stroke="${NAVY}" stroke-width="7" fill="#fff" fill-opacity=".2"><circle cx="-31" cy="6" r="26"/><circle cx="31" cy="6" r="26"/><line x1="-5" y1="4" x2="5" y2="4"/></g>`:'';
+  return cheeks+eyes+extra+mouth+g;
+}
+function rara(x,y,s,o={}){
+  const skin='#C98B5F', col='#15787D', e=o.e||'smile';
+  const aR=o.armR??10, aL=o.armL??-10;
+  return `<g transform="translate(${x},${y}) scale(${s*(o.flip?-1:1)},${s})">
+   <path d="M-112 -20 C-118 -122 118 -122 112 -20 L120 66 L98 56 L110 112 L84 92 L86 132 L-86 132 L-84 92 L-110 112 L-98 56 L-120 66 Z" fill="#B58BF5" ${O}/>
+   <rect x="-122" y="105" width="244" height="400" rx="80" fill="${col}" ${O}/>
+   <path d="M-34 108 L0 160 L34 108 Z" fill="#fff" ${O}/>
+   <rect x="-80" y="200" width="70" height="30" rx="6" fill="#FFD45C" ${O}/>
+   ${arm(-112,150,aL,170,col,skin,o.propL||'')}
+   ${arm(112,150,aR,170,col,skin,o.propR||'')}
+   <rect x="-18" y="70" width="36" height="45" fill="${skin}" ${O}/>
+   <circle r="90" fill="${skin}" ${O}/>
+   <path d="M-100 -6 C-98 -116 98 -116 100 -6 C86 -58 36 -76 10 -46 L0 -24 L-10 -46 C-36 -76 -86 -58 -100 -6 Z" fill="#B58BF5" ${O}/>
+   <path d="M-56 -74 C-26 -98 22 -98 50 -82" stroke="#E4CCFF" stroke-width="10" fill="none" stroke-linecap="round"/>
+   <circle cx="-92" cy="50" r="16" fill="none" stroke="#FFD45C" stroke-width="7"/><circle cx="92" cy="50" r="16" fill="none" stroke="#FFD45C" stroke-width="7"/>
+   <g transform="scale(${o.flip?-1:1},1)">${face(e)}</g></g>`}
+function bimo(x,y,s,o={}){
+  const skin='#8D5A3B', col='#3B4CCA', e=o.e||'smile';
+  const aR=o.armR??10, aL=o.armL??-10;
+  let curls=[[-74,-44,30],[-54,-82,32],[-16,-102,32],[24,-102,32],[60,-82,32],[78,-44,30],[-30,-60,28],[12,-68,30],[46,-56,26]].map(([a,b,r])=>`<circle cx="${a}" cy="${b}" r="${r}"/>`).join('');
+  return `<g transform="translate(${x},${y}) scale(${s*(o.flip?-1:1)},${s})">
+   <rect x="-118" y="105" width="236" height="400" rx="80" fill="${col}" ${O}/>
+   <path d="M-40 108 Q0 140 40 108" fill="none" ${O}/>
+   ${arm(-108,150,aL,170,col,skin,o.propL||'')}
+   ${arm(108,150,aR,170,col,skin,o.propR||'')}
+   <rect x="-17" y="70" width="34" height="45" fill="${skin}" ${O}/>
+   <circle r="86" fill="${skin}" ${O}/>
+   <g fill="#F4A259" ${O}>${curls}</g>
+   <g fill="#F4A259">${curls}</g>
+   <g fill="#FFD08A"><circle cx="-20" cy="-114" r="10"/><circle cx="32" cy="-110" r="8"/><circle cx="-62" cy="-94" r="8"/></g>
+   <circle cx="86" cy="42" r="7" fill="#E8E8E8" ${O}/>
+   <g transform="scale(${o.flip?-1:1},1)">${face(e,'#1E1A19',true)}</g></g>`}
+function jaka(x,y,s,o={}){
+  const skin='#E0A776', col='#FD5B35', e=o.e||'smile';
+  const aR=o.armR??10, aL=o.armL??-10;
+  const leaves=[[-70,180],[40,170],[-20,260],[70,280],[-80,330],[10,360]].map(([a,b])=>`<ellipse cx="${a}" cy="${b}" rx="22" ry="11" transform="rotate(-30 ${a} ${b})" fill="#FFD45C"/>`).join('');
+  return `<g transform="translate(${x},${y}) scale(${s*(o.flip?-1:1)},${s})">
+   <rect x="-128" y="105" width="256" height="400" rx="80" fill="${col}" ${O}/>
+   ${leaves}
+   <path d="M-40 108 L0 150 L40 108" fill="#fff" ${O}/>
+   ${arm(-118,150,aL,170,col,skin,o.propL||'')}
+   ${arm(118,150,aR,170,col,skin,o.propR||'')}
+   <rect x="-18" y="70" width="36" height="45" fill="${skin}" ${O}/>
+   <circle r="92" fill="${skin}" ${O}/>
+   <path d="M-98 -4 C-116 -110 -36 -178 52 -164 C128 -150 136 -70 98 -4 C94 -52 66 -70 30 -72 C-10 -76 -62 -66 -82 -38 Z" fill="#2B2321" ${O}/>
+   <path d="M0 -150 C40 -146 84 -122 96 -84" stroke="#D9D9D9" stroke-width="12" fill="none" stroke-linecap="round"/>
+   <g transform="scale(${o.flip?-1:1},1)">${face(e)}
+   <path d="M-40 30 Q-20 18 0 26 Q20 18 40 30 Q20 40 0 34 Q-20 40 -40 30 Z" fill="#2B2321"/></g></g>`}
+// props (drawn in hand space, hand at 0,0)
+function phone(kind,rot=0){
+  let scr='';
+  if(kind==='chat') scr=`<rect x="-30" y="-58" width="50" height="14" rx="7" fill="#15787D"/><rect x="-20" y="-36" width="50" height="14" rx="7" fill="#ccc"/><rect x="-30" y="-14" width="44" height="14" rx="7" fill="#15787D"/>`;
+  else if(kind==='cal') scr=`<rect x="-32" y="-60" width="64" height="16" rx="4" fill="#e9dcc8"/><rect x="-32" y="-38" width="64" height="16" rx="4" fill="#2DBE78"/><rect x="-32" y="-16" width="64" height="16" rx="4" fill="#e9dcc8"/>`;
+  else if(kind==='dark') scr=`<rect x="-34" y="-66" width="68" height="70" fill="#2a2a33"/><rect x="-14" y="-40" width="30" height="20" fill="#3b3b46"/>`;
+  else if(kind==='qr') scr=`<g fill="#16202A"><rect x="-28" y="-62" width="20" height="20"/><rect x="8" y="-62" width="20" height="20"/><rect x="-28" y="-26" width="20" height="20"/><rect x="0" y="-30" width="8" height="8"/><rect x="14" y="-18" width="8" height="8"/><rect x="0" y="-44" width="8" height="8"/></g>`;
+  else if(kind==='cam') scr=`<rect x="-34" y="-66" width="68" height="70" fill="#BFE3E0"/><rect x="-20" y="-40" width="40" height="26" fill="#f6b98a"/>`;
+  return `<g transform="rotate(${rot}) translate(0,-20)"><rect x="-46" y="-90" width="92" height="160" rx="16" fill="${NAVY}" ${O}/><rect x="-36" y="-76" width="72" height="126" rx="8" fill="#fff"/><g transform="translate(0,10)">${scr}</g></g>`}
+function mug(){return `<g transform="translate(0,-30)"><rect x="-30" y="-40" width="60" height="70" rx="10" fill="#fff" ${O}/><path d="M30 -24 Q56 -20 52 0 Q48 16 30 14" fill="none" ${O}/><path d="M-12 -56 Q-4 -70 -12 -84 M10 -56 Q18 -70 10 -84" stroke="#9aa" stroke-width="5" fill="none"/></g>`}
+function star(x,y,r,c='#FFD45C'){const p=[];for(let i=0;i<10;i++){const a=Math.PI/5*i-Math.PI/2,rr=i%2?r*.45:r;p.push((x+Math.cos(a)*rr).toFixed(1)+','+(y+Math.sin(a)*rr).toFixed(1))}return `<polygon points="${p.join(' ')}" fill="${c}" ${O}/>`}
+function burst(x,y,r,c){const p=[];for(let i=0;i<24;i++){const a=Math.PI/12*i,rr=i%2?r*.72:r;p.push((x+Math.cos(a)*rr).toFixed(1)+','+(y+Math.sin(a)*rr).toFixed(1))}return `<polygon points="${p.join(' ')}" fill="${c}"/>`}
+function rays(cx,cy,c){let s='';for(let i=0;i<18;i++){const a=i*20*Math.PI/180;s+=`<polygon points="${cx},${cy} ${cx+Math.cos(a)*1400},${cy+Math.sin(a)*1400} ${cx+Math.cos(a+.17)*1400},${cy+Math.sin(a+.17)*1400}" fill="${c}"/>`}return s}
+
+
+const $=id=>document.getElementById(id);
+const cl=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
+const io=x=>x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2;
+const back=x=>{const c=1.70158,c3=c+1;return 1+c3*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const seg=(t,a,b)=>cl((t-a)/(b-a));
+(function(){let h='';['Sen','Sel','Rab','Kam','Jum','Sab','Min'].forEach(d=>h+=`<div class="hd">${d}</div>`);h+='<div></div>';for(let d=1;d<=31;d++)h+=`<div id="d${d}">${d}</div>`;$('cal').innerHTML=h;
+ let q='';const r=(()=>{let s=7;return()=>{s=(s*9301+49297)%233280;return s/233280}})();for(let y=0;y<15;y++)for(let x=0;x<15;x++){const f=(x<4&&y<4)||(x>10&&y<4)||(x<4&&y>10);if(f||r()>.5)q+=`<rect x="${x*20}" y="${y*20}" width="20" height="20" fill="#16202A"/>`}
+ [[0,0],[220,0],[0,220]].forEach(([a,b])=>q+=`<rect x="${a+16}" y="${b+16}" width="48" height="48" fill="#fff"/><rect x="${a+26}" y="${b+26}" width="28" height="28" fill="#16202A"/>`);$('qr').innerHTML=q})();
+function caption(html,dk){const c=$('cap'); if(c.dataset.h!==html){c.innerHTML=html;c.dataset.h=html;} c.className='cap'+(dk?' dk':'')}
+const CAPS=[[0,'Jam 2 pagi,<br><span class="hl">ada tamu mau pesan.</span>'],[3.6,'Pemilik tidur,<br><span class="hl">tamu pesan sendiri.</span>'],
+ [11.6,'Pagi bangun,<br><span class="hl">pesanan sudah masuk.</span>'],[14.8,'Tidur nyenyak,<br><span class="hl">pesanan tetap jalan.</span>']];
+function tapAt(t,s,x,y){const v=seg(t,s,s+.35);return v>0&&v<1?{x,y,k:Math.sin(Math.PI*v)}:null}
+window.setT=function(t){
+  let k=0; CAPS.forEach((c,i)=>{if(t>=c[0])k=i}); caption(CAPS[k][1],k>=2);
+  const cs=seg(t,CAPS[k][0]+.1,CAPS[k][0]+.6); const c=$('cap'); c.style.opacity=cs; c.style.transform=`translateY(${(1-back(cs))*40}px) scale(${.9+.1*back(cs)})`;
+  const day=io(seg(t,11.2,11.9)); $('day').setAttribute('opacity',day); $('night').setAttribute('opacity',1-day);
+  $('sun').setAttribute('cy',840-seg(t,11.4,13.0)*190);
+  $('clkbg').setAttribute('fill',day>.5?'#173336':'#0d1319');
+  $('clk').textContent=t<11.5?(t<5?'02.00':t<8?'02.01':'02.03'):'07.00';
+  $('floor').setAttribute('fill',day>.5?'#E9DCC8':'#0f171f');
+  // sleeping jaka vs sitting jaka
+  const bre=Math.sin(t*1.6);
+  $('jsleep').innerHTML=t<11.6?`<g transform="translate(300,${1330+bre*3}) rotate(-90)">${jaka(0,0,.8,{e:'sleep'})}</g>`:'';
+  if(t>=11.6){const st=io(seg(t,12.0,12.6))*(1-io(seg(t,13.4,13.8)));
+    const e=t<12.0?'sleep':(t<13.6?'shock':'happy');
+    const holdPhone=t>=13.4;
+    $('jsit').innerHTML=`<g transform="translate(330,${1110+Math.sin(t*2)*4})">${jaka(0,0,.8,{e:t>13.0&&t<13.6?'grin':e,armL:holdPhone?120:20+st*140,armR:holdPhone?(t>14.8?-160:-140):-20-st*140,propR:holdPhone?(t>14.8?mug():phone('chat',180)):''})}</g>`;
+  } else $('jsit').innerHTML='';
+  $('blanket').setAttribute('d',t<11.6?`M360 ${1300+bre*4} Q560 ${1250+bre*6} 980 1300 L990 1490 L360 1490 Z`:'M400 1420 Q600 1380 980 1400 L990 1490 L330 1490 Z');
+  $('bstripe').setAttribute('opacity',t<11.6?1:0);
+  // zzz
+  const zv=t<11.2?1:0; [['z1',0],['z2',.6],['z3',1.2]].forEach(([id,o])=>{const p=((t+o)%1.8)/1.8;const e=$(id);e.setAttribute('x',300+p*120+Math.sin(p*6)*14);e.setAttribute('y',1190-p*220);e.setAttribute('opacity',zv*Math.sin(Math.PI*p))});
+  // bimo scene 3.6-11.2
+  const bs=Math.min(seg(t,3.6,3.9),1-seg(t,10.9,11.2)); $('bscene').setAttribute('opacity',bs);
+  $('bed').setAttribute('opacity',1-bs);
+  if(bs>0){const ex=t>10.2?'grin':(t>8?'happy':'smile');
+    $('bimo').innerHTML=bimo(170,1360+Math.sin(t*2)*5,.62,{e:ex,armR:-150,propR:phone(t>7.6?'qr':'cal',180),armL:t>10.2?150+Math.sin(t*12)*10:-10});}
+  // phone
+  const po=Math.min(seg(t,3.8,4.2),1-seg(t,10.9,11.2)); const pin=back(seg(t,3.8,4.3));
+  $('ph').style.opacity=po; $('ph').style.transform=`translateY(${(1-pin)*120}px) scale(${.85+.15*pin})`;
+  $('ptime').textContent=t<8?'02.01':'02.03';
+  const pages=[[4.0,6.0],[6.0,7.8],[7.8,9.3],[9.3,11.2]];
+  pages.forEach(([a,b],i)=>{const v=Math.min(seg(t,a,a+.25),1-seg(t,b,b+.01));$('pg'+(i+1)).style.opacity=i==3?seg(t,a,a+.25):v;$('pg'+(i+1)).style.transform=`translateX(${(1-io(seg(t,a,a+.25)))*60}px)`});
+  $('d24').className=t>4.8?'on':''; $('d26').className=t>5.3?'on':''; $('d25').className=t>5.3?'rg':'';
+  $('rd').className='room'+(t>6.9?' sel':'');
+  $('okc').style.transform=`scale(${back(seg(t,9.4,9.8))})`;
+  const taps=[tapAt(t,4.6,'174px','470px'),tapAt(t,5.1,'322px','470px'),tapAt(t,5.6,'230px','800px'),tapAt(t,6.7,'260px','290px'),tapAt(t,7.4,'230px','800px'),tapAt(t,8.9,'230px','800px')].filter(x=>x);
+  const tp=$('tp'); if(taps.length){tp.style.left=taps[0].x;tp.style.top=taps[0].y;tp.style.transform=`scale(${taps[0].k})`} else tp.style.transform='scale(0)';
+  // morning notif 12.6-14.6
+  const nf=Math.min(back(seg(t,12.6,13.0)),1-seg(t,14.5,14.8)); $('nf').style.opacity=Math.min(seg(t,12.6,12.8),1-seg(t,14.5,14.8)); $('nf').style.transform=`translateY(${(1-nf)*-80}px)`;
+  const sp=seg(t,13.0,13.3)*(1-seg(t,16.0,16.3)); $('spark').setAttribute('opacity',sp); $('spark').setAttribute('transform',`translate(0,${-seg(t,13,16.3)*40})`);
+  const ct=io(seg(t,16.3,16.8)); $('cta').style.opacity=ct; $('cta').style.transform=`translateY(${(1-ct)*80}px)`;
+};
+window.setT(0);
+</script></body></html>
