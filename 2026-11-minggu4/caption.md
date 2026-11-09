@@ -1,6 +1,6 @@
 # Minggu 4 (16–20 Nov 2026) — Edukasi pemilik
 
-Status: MENUNGGU ACC PEMILIK (belum dijadwalkan)
+Status: ACC 10 Nov 2026 · TERJADWAL di Postingkuy (IG + TikTok, 19:00 WIB)
 Semua tayang IG + TikTok, 19:00 WIB (belum ada data jam terbaik).
 
 ## Sen 16 Nov · 19:00 · Video `v1_16nov.mp4` (19 dtk)
