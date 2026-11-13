@@ -1,0 +1,57 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="ep.css"></head><body><div id="stage"></div>
+<script src="../../../template/video-kartun/hidup.js"></script><script src="../../../template/video-kartun/tokoh.js"></script><script src="ep.js"></script>
+<script>
+const $=id=>document.getElementById(id), {seg,io,out,lerp,spring,elastic}=H, lin=x=>x, BG="#FCF5EB", TOPX=()=>$("fxTop");
+const caps=(t,L)=>{for(const [a,b,s] of L){if(t<b+.05||L[L.length-1][0]===a){H.text($("cap"),s,t,a,{end:b,bg:BG});break;}}};
+/* EP2 (Min 15 Nov): "Bukti transfer buram." Taruhan: uang + malu salah nuduh tamu. Emosi: serba salah. Fitur: nota + QRIS otomatis. */
+const DUR=21.4, PINDAH=12.4, CTA=18.2;
+const MUSIK="bed(5.9,vol=.85); soft_bed(6.0,12.3,1.3); bed(18.1,start=12.5,bpm=112); tada(18.3)";
+let qr='';for(let i=0;i<9;i++)for(let j=0;j<9;j++){const c=(i<3&&j<3)||(i<3&&j>5)||(i>5&&j<3)||((i*7+j*13+i*j)%3==0);if(c)qr+=`<rect x="${j*20}" y="${i*20}" width="20" height="20" fill="#16202A"/>`;}
+E.mount({A:{meja:'resepsionis',mx:340,dinding:'#EFE3CF',motif:'#E5D6BC',bawah:'#E2D0B2'},B:{meja:'resepsionis',mx:340,dinding:'#E1F0EA',motif:'#D0E5DC',bawah:'#CBE0D6',kusen:'#FD5B35'},
+ html:`<div class="card" id="cardA" style="top:480px"><div class="scr" style="text-align:center"><div class="t">Bukti transfer</div><div class="s">Foto dari tamu</div>
+  <div style="background:#f3efe6;border-radius:20px;padding:26px;font-size:28px;color:#666;overflow:hidden"><div style="filter:blur(2px)">Transfer berhasil</div><div id="nom" style="font-weight:700;font-size:68px;color:#173336;margin:12px 0">Rp350.000</div><div style="filter:blur(3px)">ke: HOMESTAY ANDA</div></div></div></div>
+ <div class="bub t" id="t1" style="left:470px;top:640px">Kak, saya sudah<br>transfer, lho.</div>
+ <div class="bub k" id="a1" style="left:50px;top:560px">Maaf, bisa kirim ulang<br>buktinya?</div>
+ <div class="bub t" id="t2" style="left:430px;top:730px;font-weight:700">Lho, saya dikira<br>belum bayar?</div>
+ <div class="card" id="cardB" style="top:470px"><div class="scr"><div class="t">Nota · Homestay Anda</div><div class="s">Kamar Deluxe · 1 malam</div>
+  <div style="display:flex;gap:24px;align-items:center"><svg width="200" height="200" viewBox="-10 -10 200 200" style="background:#fff;border:4px solid #16202A;border-radius:14px">${qr}</svg><div><div style="font-size:24px;color:#7a8580">Total bayar</div><div style="font-weight:700;font-size:54px;color:#173336">Rp350.000</div><div style="font-size:24px;color:#15787D;font-weight:700">QRIS</div></div></div>
+  <div class="hr g" id="kirim" style="border:0;margin-top:10px"><span>Nota otomatis terkirim ke tamu</span><b>✓</b></div><div class="stempel" id="lunas">LUNAS</div></div></div>
+ <div class="bub k" id="j1" style="left:60px;top:590px">Struk buram?<br>Sudah lupa rasanya.</div>`});
+const camA=[[0,{x:400,y:1070,s:1.8}],[2.3,{x:400,y:1070,s:1.88},lin],[2.9,{x:540,y:960,s:1}],[9.5,{x:540,y:960,s:1}],[10.2,{x:560,y:1060,s:1.22},out],[12.4,{x:560,y:1060,s:1.28},lin]];
+const camB=[[12.4,{x:540,y:980,s:1.1}],[13.2,{x:540,y:960,s:1},out],[16.5,{x:540,y:960,s:1}],[17.1,{x:420,y:1070,s:1.35}],[18.2,{x:420,y:1070,s:1.4},lin]];
+const BX=840,BY=1055,BS=1.1,FLOOR=BY+T.KAKI*BS;
+H.cue('pop',.1);H.cue('whoosh',2.4);H.cue('whoosh',2.8);H.cue('pop',2.9);H.cue('tick',3.6);H.cue('tick',4.2);H.cue('tick',4.8);H.cue('whoosh',5.6);H.cue('pop',6.0);H.cue('pop',6.6);[7.0,7.31,7.63,7.94,8.26].forEach(s=>H.cue('tap',s));
+H.cue('pop',9.5);H.cue('pop',9.7);H.cue('boing',10.7);H.cue('pop',10.7);H.cue('whoosh',12.3);H.cue('pop',12.6);H.cue('whoosh',13.2);H.cue('tick',14.3);H.cue('stamp',14.85);H.cue('chime',15.0);H.cue('pop',15.3);H.cue('notif',15.6);H.cue('pop',16.7);H.cue('whoosh',18.1);
+window.setT=function(t){
+  caps(t,[[-.7,2.6,'Bukti transfer buram.|*350 ribu atau 35 ribu?*'],[2.9,5.95,'Di-zoom,|*malah makin buram.*'],[6.0,9.45,'Tamunya sudah nunggu|*di depan meja.*'],[9.5,12.3,'Mau nanya lagi,|*takut salah nuduh.*'],[12.6,15.25,'Di tempat Bos Jaka,|*tamu bayar pakai QRIS.*'],[15.3,18.15,'Nominal jelas,|*nota otomatis keluar.*']]);
+  const ca=E.kartu('cardA',t,2.8,5.9), cb=E.kartu('cardB',t,13.2,16.6,{pk:H.punch(t,14.9,.3,.04)});
+  E.frame(t,{camA,camB,pindah:PINDAH,pindahXY:[340,1080],dim:Math.max(ca,cb),shakeA:H.shake(t,10.7,.4,10,3)});
+  const z=seg(t,3.3,5.4); $('nom').style.filter=`blur(${3+z*7}px)`; $('nom').style.transform=`scale(${1+z*.9})`;
+  /* Acong */
+  const hook=t<2.6, tanya=t>9.5&&t<10.6, kena=t>=10.7;
+  const armR=hook?-128+Math.sin(t*5)*3:-108+Math.sin(t*3)*3, armL=t>3.2&&t<5.6?-74+Math.sin(t*20)*5:(kena?lerp(16,150,out(seg(t,10.7,11.0))):16);
+  const face=hook?{eye:'line',mouth:'wavy',brow:-3,browTilt:12,look:[8,0]}:kena?{eye:'wide',mouth:'sad',brow:9}:tanya?{eye:'normal',look:[9,0],brow:6,browTilt:-8,...T.bicara(t,4)}:t>6?{eye:'normal',look:[9,-1],mouth:'wavy',brow:5,browTilt:8}:{eye:'line',mouth:t%1.2<.5?'flat':'wavy',brow:-2,browTilt:12,look:[8,3]};
+  const sh=H.shake(t,10.7,.4,9,6);
+  $('Ac1').innerHTML=T.acong(340+sh[0],1085,1.2,T.hidup(t,5,{tilt:hook?8:(t>6?4:7),lean:hook?4:0,armL,armR,propR:T.hp(armR,'bingung'),face}));
+  const mk=seg(t,10.9,11.5); $('Afx').innerHTML=mk>0?T.mendung(340,835,t,mk):'';
+  /* Bimo menunggu */
+  const bx=lerp(1400,BX,io(seg(t,5.5,6.9))), jl=t>5.5&&t<6.9, wk=jl?T.jalan(t,12):{}, ketuk=t>6.95&&t<9.4?Math.max(0,Math.sin(t*20))*-13:0, marah=t>10.7;
+  const bsay=(t>6.6&&t<8.0)||(t>10.7&&t<11.9);
+  $('Ac2').innerHTML=T.koper(bx+150,FLOOR-144,jl?Math.sin(t*12)*3:0)+T.bimo(bx,BY,BS,T.hidup(t,2,{...wk,legR:(wk.legR||0)+ketuk,tilt:-5,armL:marah?150+Math.sin(t*10)*8:(wk.armL??12),armR:wk.armR??-12,
+    face:{look:[-7,0],brow:marah?-4:5,browTilt:marah?-14:-3,...(bsay?T.bicara(t,2):marah?{mouth:'sad'}:{mouth:'flat'})}}));
+  H.footfalls(5.6,6.9,12).forEach((s,i)=>H.puff($('Afx'),'pf'+i,t,s,{x:lerp(1400,BX,io(seg(s,5.5,6.9))),y:FLOOR,color:'#C9A777'}));
+  E.pop('t1',t,6.6,9.3,{rot:2}); E.pop('a1',t,9.7,12.3,{rot:-2}); E.pop('t2',t,10.7,12.3,{rot:3,goyang:2});
+  H.lines(TOPX(),'ln',t,10.7,{x:640,y:780,n:10,r0:230,r1:310,dur:.5});
+  /* Bos Jaka + Bimo scan */
+  const scan=seg(t,13.9,14.3)*(1-seg(t,15.4,15.8)), sen=t>14.9, jsay=t>16.7&&t<18.0;
+  $('Bc1').innerHTML=T.jaka(340,1075,1.2,T.hidup(t,3,{legs:false,tilt:3,armL:14,armR:-100+Math.sin(t*2)*4,propR:T.cangkir(-100,t),face:{look:[8,0],brow:6,...(jsay?T.bicara(t,1):{mouth:'smile',eye:sen?'happy':'normal'})}}));
+  const hb=H.hop(t,15.0,.4,26), bR=lerp(12,150,io(scan));
+  $('Bc2').innerHTML=T.koper(BX+150,FLOOR-144,0)+T.bimo(BX,BY,BS,T.hidup(t,2,{tilt:-5,armL:bR,armR:-12-seg(t,15.0,15.3)*(1-seg(t,16,16.3))*140,propL:scan>0?T.hp(bR,sen?'ok':'kalender'):'',air:hb.y,squash:[hb.sx,hb.sy],face:{look:[-7,scan*-3],brow:sen?9:4,...(sen?{mouth:'open',eye:'happy'}:{mouth:'smile'})}}));
+  H.ring(TOPX(),'sc',t,14.3,{x:330,y:740,r:150,color:'#15787D',dur:.5});
+  const k=elastic(seg(t,14.85,15.4)); $('lunas').style.transform=`rotate(-10deg) scale(${k?3-2*Math.min(1,k):0})`; $('lunas').style.opacity=t>14.85?1:0; $('kirim').style.opacity=seg(t,15.5,15.8);
+  H.burst(TOPX(),'cf',t,14.95,{x:640,y:900,n:18,kind:'mix',spread:200,speed:480,seed:7});
+  E.pop('j1',t,16.7,18.15,{rot:-3});
+  E.cta(t,CTA,{tanya:'Bukti transfer|*paling aneh* yang|pernah kamu terima?',xy:[420,1070],who:'jaka'});
+};
+setT(0);
+</script></body></html>

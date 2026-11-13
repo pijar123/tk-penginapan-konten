@@ -1,0 +1,6 @@
+f_*/
+chk/
+*.wav
+log_*.txt
+all.log
+__pycache__/
