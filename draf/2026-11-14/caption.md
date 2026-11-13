@@ -1,4 +1,4 @@
-# Draf reel cerita 14–19 Nov 2026 (menunggu ACC)
+# Reel cerita 14–19 Nov 2026 (ACC 13 Nov, terjadwal di Postingkuy)
 
 Empat reel cerita baru dengan aturan "Cerita yang kena": satu momen nyata, taruhan, satu fitur, punchline, pertanyaan komentar.
 Sumber: `src/ep1.html` – `src/ep4.html` (kerangka `src/ep.js`). Semua IG + TikTok.
