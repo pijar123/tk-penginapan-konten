@@ -11,6 +11,7 @@ Fitur yang BOLEH disebut (sudah dikonfirmasi):
 - Kamar yang sudah penuh tampil "Penuh", jadi tamu tahu tanpa bertanya
 - Tamu pesan langsung tanpa menunggu balasan chat
 - Nota + QRIS otomatis
+- Laporan untuk pemilik: pemasukan dan pengeluaran tercatat di satu tempat (dikonfirmasi pemilik 28 Okt 2026)
 - Biaya tetap mulai Rp149rb/bulan, bukan potong komisi per pesanan
 - Demo gratis di titikkumpul.id/layanan-penginapan
 
@@ -50,6 +51,15 @@ Kode tokoh:
 - **Versi baru (dipakai mulai 13 Nov 2026):** `template/video-kartun/tokoh.js`, fungsi `T.rara`, `T.bimo`, `T.jaka`, `T.acong`, `T.yanti`. Wajah terpisah (alis, mata, mulut) supaya bisa kedip, melirik, dan bicara; bayangan; tangan berjempol; kaki dan sepatu. Lihat semua tokoh dan ekspresinya di `template/video-kartun/lembar-tokoh.html`.
 
 **Semua tokoh di layar harus hidup.** Bungkus opsi tokoh dengan `T.hidup(t, seed, opsi)` supaya otomatis bernapas, berkedip, dan rambutnya menyusul. Tidak ada tokoh yang diam total, termasuk tokoh latar dan tokoh di layar CTA. Kaki tampil kalau seluruh badan terlihat; sembunyikan (`legs:false`) saat tokoh di balik meja atau di kasur.
+
+## Cerita yang kena (berlaku mulai 13 Nov 2026)
+Video cerita dinilai dari apakah pemilik penginapan merasa "ini gue banget", bukan dari jumlah fitur yang disebut.
+- Mulai dari momen spesifik: "Sabtu jam 9 malam, tamu sudah di depan pagar, kamarnya ternyata dobel."
+- Tunjukkan yang dipertaruhkan dan satu emosi (panik, malu, capek, lega). Emosi dulu, fitur belakangan.
+- Durasi 15-25 detik, tiga babak, punchline di akhir. Satu video satu fitur.
+- Kalimat tokoh seperti chat asli. Hindari kata "sistem", "dashboard", "otomatis match".
+- Caption baris 1 = momennya, bukan fiturnya. Akhiri dengan pertanyaan untuk komentar.
+- Label "Ilustrasi" tetap wajib.
 
 ## Format
 - **Video cerita (Senin & Jumat)**: kartun 2D flat ala `sampel/video-kartun-libur-ramai.mp4`, tokoh series bergerak (jalan, kedip, rambut bergoyang, ganti ekspresi, gerak tangan) + mockup HP untuk menunjukkan fitur. 1080×1920, 15–30 detik, hook teks besar di detik pertama, penutup CTA demo + alamat web. Basis: `template/video-kartun/`.

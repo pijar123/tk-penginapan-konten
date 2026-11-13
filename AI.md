@@ -20,6 +20,15 @@ Repo materi IG + TikTok untuk TK Penginapan (booking online untuk pemilik pengin
 - Semua tokoh di layar harus hidup (bungkus dengan `T.hidup`).
 - Musik/SFX hanya buatan sendiri (`sound.py`).
 
+## Cerita harus kena ke penonton (wajib untuk video cerita)
+Penonton = pemilik penginapan kecil. Data 26 Okt-13 Nov: reel ditonton ±70% tapi interaksi nol, artinya cerita lewat tanpa terasa.
+- Satu momen nyata yang pernah dialami pemilik, lengkap dengan waktu, tempat, dan bendanya. Bukan "Pemilik A vs B".
+- Ada taruhan (uang, malu, tidur, tamu kecewa) dan satu emosi utama. Fitur muncul belakangan sebagai jalan keluar, cukup satu.
+- Tiga babak, 15-25 detik: momen kena → makin parah → jalan keluar + punchline. Jangan 8-9 detik.
+- Frame pertama tiap video harus beda (close-up wajah + teks hook), jangan adegan pembuka yang sama.
+- Tutup dengan pertanyaan yang gampang dijawab di komentar.
+- Lolos tes "ini gue banget" dulu sebelum render. Detail: skill `strategi-konten-kreatif-penginapan` bagian "Cerita yang kena".
+
 ## Produksi
 - Video 1080×1920, 30 fps: `template/video-kartun/`. Periksa frame dulu: `render.py check`. Setelah benar: `render.py` → frame di `f/` → ffmpeg + `sound.py out.wav`.
 - Video kartun versi baru: salin `template/video-kartun/scene-baru.html`. Cek: `render-baru.py <file> <detik> check`. Penuh: `render-baru.py <file> <detik> f`.
