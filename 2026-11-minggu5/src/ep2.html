@@ -1,0 +1,87 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="ep.css">
+<style>
+#cardD .scr{height:820px;padding:0}
+.sc{position:absolute;inset:0;padding:30px 26px;box-sizing:border-box;opacity:0}
+.hero{height:230px;border-radius:24px;background:linear-gradient(160deg,#BFE3E0,#7fc8c2);position:relative;overflow:hidden;margin:14px 0 20px}
+.hero .bed{position:absolute;left:60px;right:60px;bottom:30px;height:90px;border-radius:18px;background:#FCF5EB}
+.hero .pil{position:absolute;left:90px;bottom:100px;width:110px;height:40px;border-radius:14px;background:#fff}
+.hero .bl{position:absolute;right:90px;bottom:60px;width:170px;height:60px;border-radius:12px;background:#FD5B35;opacity:.85}
+.btnA{background:#FD5B35;color:#fff;font-weight:700;font-size:30px;text-align:center;border-radius:22px;padding:22px;margin-top:20px}
+.info{font-size:22px;color:#556;line-height:1.5}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;text-align:center;font-size:24px;color:#173336;margin-top:10px}
+.cal .h{font-size:18px;color:#8a948f;font-weight:700}
+.cal .d{height:64px;line-height:64px;border-radius:14px;font-weight:500}
+.pay{display:flex;gap:22px;align-items:center;margin-top:14px}
+.lbl{font-size:22px;color:#7a8580}.big2{font-weight:700;font-size:48px;color:#173336}
+.ok{background:#E6F6EE;border:3px solid #2DBE78;color:#173336;border-radius:20px;padding:16px 20px;font-weight:700;font-size:28px;margin-top:22px;display:flex;gap:14px;align-items:center}
+.ok i{font-style:normal;width:48px;height:48px;border-radius:50%;background:#2DBE78;color:#fff;display:flex;align-items:center;justify-content:center}
+.dots{position:absolute;left:0;right:0;bottom:26px;display:flex;gap:10px;justify-content:center}
+.dots span{width:14px;height:14px;border-radius:7px;background:#e3dccf}
+</style></head><body><div id="stage"></div>
+<script src="../../template/video-kartun/hidup.js"></script><script src="../../template/video-kartun/tokoh.js"></script><script src="ep.js"></script>
+<script>
+const $=id=>document.getElementById(id), {seg,io,out,lerp,spring,elastic}=H, lin=x=>x, BG="#FCF5EB", TOPX=()=>$("fxTop");
+const caps=(t,L)=>{for(const [a,b,s] of L){if(t<b+.05||L[L.length-1][0]===a){H.text($("cap"),s,t,a,{end:b,bg:BG});break;}}};
+/* V2 (Rab 25 Nov): Demo lengkap dari sisi tamu, 5 langkah: buka link → pilih tanggal → pilih kamar tersedia → bayar QRIS → nota.
+   Tokoh kecil: Bimo sebagai tamu. Hanya fitur di panduan. Harga = contoh tampilan "Homestay Anda". */
+const DUR=30, CTA=26.4, PINDAH=99;
+const MUSIK="bed(26.3,vol=.8,bpm=108); tada(26.5)";
+let qr='';for(let i=0;i<9;i++)for(let j=0;j<9;j++){const c=(i<3&&j<3)||(i<3&&j>5)||(i>5&&j<3)||((i*7+j*13+i*j)%3==0);if(c)qr+=`<rect x="${j*20}" y="${i*20}" width="20" height="20" fill="#16202A"/>`;}
+let cal='';['Sen','Sel','Rab','Kam','Jum','Sab','Min'].forEach(d=>cal+=`<div class="h">${d}</div>`);cal+='<div></div>';for(let d=1;d<=31;d++)cal+=`<div class="d" id="d${d}">${d}</div>`;
+const ROOM=(id,c,n,p,b,cls)=>`<div class="room" id="${id}"><div class="sw" style="background:${c}"></div><div><div class="n">${n}</div><div class="p">${p}</div></div><div class="badge ${cls}">${b}</div></div>`;
+E.mount({label:'Ilustrasi · Contoh tampilan',A:{meja:'makan',waktu:'siang',dinding:'#E1F0EA',motif:'#D0E5DC',bawah:'#CBE0D6',taplak:'#FFF7E0',garis:'#15787D'},B:{meja:'makan'},
+ html:`<div class="tag2" id="step">LANGKAH 1/5</div>
+ <div class="card" id="cardD" style="top:480px"><div class="scr">
+  <div class="sc" id="s1"><div class="t">Homestay Anda</div><div class="s">Penginapan · link di bio</div><div class="hero"><div class="bed"></div><div class="pil"></div><div class="bl"></div></div>
+   <div class="info">Cek kamar kosong dan pesan langsung,<br>tanpa menunggu balasan chat.</div><div class="btnA" id="btn1">Cek kamar kosong</div></div>
+  <div class="sc" id="s2"><div class="t">Pilih tanggal</div><div class="s">Desember 2026</div><div class="cal">${cal}</div><div class="btnA" id="btn2" style="margin-top:14px">24–26 Des · Lanjut</div></div>
+  <div class="sc" id="s3"><div class="t">Kamar tersedia</div><div class="s">24–26 Des · 2 malam</div>
+   ${ROOM('r1','#7fc8c2','Kamar Standar','Rp250.000/malam','Tersedia','g')}${ROOM('r2','#f6b98a','Kamar Deluxe','Rp350.000/malam','Tersedia','g')}<div style="opacity:.5">${ROOM('r3','#d9d4cc','Kamar Keluarga','Rp500.000/malam','Penuh','o')}</div>
+   <div class="btnA" id="btn3">Pesan Kamar Deluxe</div></div>
+  <div class="sc" id="s4"><div class="t">Bayar pakai QRIS</div><div class="s">Kamar Deluxe · 24–26 Des · 2 malam</div>
+   <div class="pay"><svg width="230" height="230" viewBox="-10 -10 200 200" style="background:#fff;border:4px solid #16202A;border-radius:14px">${qr}</svg><div><div class="lbl">Total bayar</div><div class="big2">Rp700.000</div><div class="lbl" style="color:#15787D;font-weight:700">Nominal sudah pas</div></div></div>
+   <div class="ok" id="okb"><i>✓</i>Pembayaran diterima</div></div>
+  <div class="sc" id="s5"><div class="t">Nota · Homestay Anda</div><div class="s">Dikirim ke tamu</div>
+   <div class="hr"><span>Nama tamu</span><b style="font-size:28px">Bimo</b></div><div class="hr"><span>Kamar</span><b style="font-size:28px">Deluxe</b></div><div class="hr"><span>Tanggal</span><b style="font-size:28px">24–26 Des</b></div><div class="hr g" style="border:0"><span>Total</span><b>Rp700.000</b></div>
+   <div class="stempel" id="lunas" style="bottom:110px">LUNAS</div></div>
+  <div class="dots">${[1,2,3,4,5].map(i=>`<span id="dt${i}"></span>`).join('')}</div>
+ </div></div>
+ <div class="bub t" id="bm1" style="left:560px;top:820px">Mau nginep 24 Des.<br>Males nanya-nanya.</div>
+ <div class="bub k" id="bm2" style="left:80px;top:640px">Udah. Tinggal berangkat!</div>`});
+const camA=[[0,{x:560,y:1000,s:1.8}],[2.3,{x:560,y:1000,s:1.86},lin],[2.9,{x:540,y:960,s:1}],[24.4,{x:540,y:960,s:1}],[25.0,{x:540,y:1040,s:1.25},out],[26.4,{x:540,y:1040,s:1.3},lin]];
+const camB=[[0,{x:540,y:960,s:1}]];
+const ST=[[2.9,6.6],[6.6,10.8],[10.8,15.2],[15.2,19.8],[19.8,24.5]];
+const TAPS=[[5.2,540,1000],[8.2,536,888],[8.9,692,888],[10.0,540,1048],[12.8,540,765],[14.2,540,990],[16.4,390,740]];
+H.cue('pop',.1);H.cue('whoosh',2.5);H.cue('pop',2.7);ST.forEach((s,i)=>{if(i)H.cue('whoosh',s[0]-.05);H.cue('pop',s[0]+.1);});TAPS.forEach(x=>H.cue('tap',x[0]));
+H.cue('ting',8.25);H.cue('ting',8.95);H.cue('ting',12.85);H.cue('chime',18.2);H.cue('stamp',21.3);H.cue('chime',21.5);H.cue('whoosh',24.4);H.cue('pop',25.0);H.cue('jingle',25.1);H.cue('whoosh',26.3);
+window.setT=function(t){
+  caps(t,[[-.7,2.6,'Tamu pesan kamar|*tanpa chat sekali pun.*'],[2.9,6.6,'1. Buka link|*di bio penginapan.*'],[6.6,10.8,'2. Pilih tanggal|*menginap.*'],[10.8,15.2,'3. Pilih kamar|*yang masih tersedia.*'],[15.2,19.8,'4. Bayar pakai QRIS,|*nominal sudah pas.*'],[19.8,24.4,'5. Nota langsung|*masuk ke HP tamu.*'],[24.5,26.3,'Nggak ada chat,|*nggak nunggu dibalas.*']]);
+  const cd=E.kartu('cardD',t,2.7,24.6);
+  E.frame(t,{camA,camB,pindah:PINDAH,pindahXY:[540,960],dim:cd});
+  /* layar per langkah */
+  let cur=0; ST.forEach((s,i)=>{const el=$('s'+(i+1)),a=seg(t,s[0],s[0]+.35),b=i<4?seg(t,s[1]-.05,s[1]+.3):0;el.style.opacity=t<s[0]?0:Math.min(a,1-b);el.style.transform=`translateX(${(1-out(a))*120-out(b)*120}px)`;if(t>=s[0])cur=i;$('dt'+(i+1)).style.background=i==cur?'#FD5B35':'#e3dccf';});
+  $('step').textContent=`LANGKAH ${cur+1}/5`; E.pop('step',t,2.9,24.4,{}); $('step').style.transform='translateX(-50%) '+$('step').style.transform+` scale(${ST.reduce((a,s)=>a*H.punch(t,s[0],.3,.12),1)})`;
+  /* tombol ditekan */
+  [['btn1',5.2],['btn2',10.0],['btn3',14.2]].forEach(([id,s])=>{$(id).style.transform=`scale(${t>s&&t<s+.18?.94:1})`;$(id).style.filter=t>s&&t<s+.3?'brightness(.9)':'none';});
+  /* kalender: 24 lalu 26, rentang tersorot */
+  for(let d=1;d<=31;d++){const e=$('d'+d);const on=(d==24&&t>8.2)||(d==26&&t>8.9),mid=d==25&&t>8.9;e.style.background=on?'#15787D':mid?'#BFE3E0':'transparent';e.style.color=on?'#fff':'#173336';e.style.transform=`scale(${d==24?H.punch(t,8.2,.3,.2):d==26?H.punch(t,8.9,.3,.2):1})`;}
+  $('btn2').style.opacity=t>8.9?1:.35;
+  /* kamar Deluxe dipilih */
+  $('r2').style.borderColor=t>12.8?'#15787D':'#eee6da'; $('r2').style.background=t>12.8?'#E6F6F4':'#fff'; $('btn3').style.opacity=t>12.8?1:.35;
+  /* bayar */
+  const ok=spring(seg(t,18.2,18.8),1.3,5); $('okb').style.opacity=t>18.2?1:0; $('okb').style.transform=`scale(${.6+.4*ok})`;
+  const k=elastic(seg(t,21.3,21.85)); $('lunas').style.transform=`rotate(-10deg) scale(${k?3-2*Math.min(1,k):0})`; $('lunas').style.opacity=t>21.3?1:0;
+  TAPS.forEach((x,i)=>H.ring(TOPX(),'tp'+i,t,x[0],{x:x[1],y:x[2],r:70,color:'#FD5B35',dur:.45}));
+  H.burst(TOPX(),'cf',t,21.4,{x:540,y:900,n:18,kind:'mix',spread:200,speed:480,seed:4});
+  /* Bimo, tamu */
+  const hook=t<2.6, done=t>24.6, hb=H.hop(t,25.0,.4,26);
+  const aR=hook?-120+Math.sin(t*4)*3:(done?lerp(-110,-150,out(seg(t,24.9,25.2)))+Math.sin(t*12)*10:-110+Math.sin(t*2)*3);
+  const aL=done?lerp(14,150,out(seg(t,24.9,25.2))):14+Math.sin(t*20)*(t>3&&t<24?4:0);
+  const bsay=(t>.3&&t<2.0)||(t>25.0&&t<26.0);
+  $('Ac1').innerHTML=T.bimo(540,1065,1.15,T.hidup(t,2,{legs:false,tilt:hook?-4:2,armL:aL,armR:aR,propR:T.hp(aR,done?'ok':'kalender'),air:hb.y,squash:[hb.sx,hb.sy],
+    face:{look:hook?[8,-4]:[6,-4],brow:done?9:5,...(bsay?T.bicara(t,2):done?{mouth:'open',eye:'happy'}:{mouth:'smile'})}}));
+  E.pop('bm1',t,.3,2.6,{rot:3}); E.pop('bm2',t,25.0,26.3,{rot:-3});
+  E.cta(t,CTA,{tanya:'Tamu kamu biasanya|pesan lewat *chat*|atau *link?*',xy:[540,1080],who:'jaka'});
+};
+setT(0);
+</script></body></html>

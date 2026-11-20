@@ -1,0 +1,73 @@
+<!doctype html><html><head><meta charset="utf-8"><link rel="stylesheet" href="ep.css"></head><body><div id="stage"></div>
+<script src="../../template/video-kartun/hidup.js"></script><script src="../../template/video-kartun/tokoh.js"></script><script src="ep.js"></script>
+<script>
+const $=id=>document.getElementById(id), {seg,io,out,lerp,spring,elastic}=H, lin=x=>x, BG="#FCF5EB", TOPX=()=>$("fxTop");
+const caps=(t,L)=>{for(const [a,b,s] of L){if(t<b+.05||L[L.length-1][0]===a){H.text($("cap"),s,t,a,{end:b,bg:BG});break;}}};
+/* V1 (Sen 23 Nov): "Desember lalu. Ngetik 'maaf, penuh' 60 kali."  Momen: libur akhir tahun, semua kamar penuh, chat "masih ada?" tak berhenti.
+   Taruhan: tamu yang sudah datang dicuekin + HP mati. Emosi: capek. Fitur: kamar penuh tampil "Penuh". Punchline: HP Bos Jaka masih 80%. */
+const DUR=21.4, PINDAH=12.4, CTA=18.2;
+const MUSIK="bed(6.0,vol=.85); soft_bed(6.1,12.3,1.3); bed(18.1,start=12.5,bpm=112); tada(18.3)";
+E.mount({A:{meja:'resepsionis',mx:340,waktu:'sore',dinding:'#EFE3CF',motif:'#E5D6BC',bawah:'#E2D0B2'},B:{meja:'resepsionis',mx:340,dinding:'#E1F0EA',motif:'#D0E5DC',bawah:'#CBE0D6',kusen:'#FD5B35'},
+ html:`<div class="bub m" id="bat" style="left:600px;top:600px;font-size:40px">Baterai 3%</div>
+ <div class="bub t" id="c1" style="left:60px;top:600px">Kak, tgl 24 ada kamar?</div>
+ <div class="bub t" id="c2" style="right:50px;top:700px">Kalau tgl 25?</div>
+ <div class="bub t" id="c3" style="left:110px;top:800px">Kak, 26–27 masih ada?</div>
+ <div class="bub t" id="c4" style="right:40px;top:900px">Kamar apa aja yg kosong?</div>
+ <div class="bub k" id="mp" style="left:470px;top:1000px">"Maaf, penuh" <span id="mpn">×57</span></div>
+ <div class="bub t" id="t1" style="left:520px;top:640px">Pak, saya mau<br>check-in…</div>
+ <div class="bub t" id="t2" style="left:470px;top:620px;font-weight:700">Pak?? Saya dari<br>tadi berdiri, lho.</div>
+ <div class="bub m" id="bat2" style="left:60px;top:560px;font-size:40px">Baterai 1%</div>
+ <div class="card" id="cardB" style="top:470px"><div class="scr"><div class="t">Homestay Anda</div><div class="s">24–27 Des · 2 tamu</div>
+  <div class="room"><div class="sw" style="background:#7fc8c2"></div><div><div class="n">Kamar Standar</div><div class="p">Rp250.000/malam</div></div><div class="badge" id="p1">Penuh</div></div>
+  <div class="room"><div class="sw" style="background:#f6b98a"></div><div><div class="n">Kamar Deluxe</div><div class="p">Rp350.000/malam</div></div><div class="badge" id="p2">Penuh</div></div>
+  <div class="room"><div class="sw" style="background:#d9d4cc"></div><div><div class="n">Kamar Keluarga</div><div class="p">Rp500.000/malam</div></div><div class="badge" id="p3">Penuh</div></div>
+  <div class="hr g" id="tahu" style="border:0;font-size:24px"><span>Tamu lihat sendiri, nggak perlu nanya</span><b>✓</b></div></div></div>
+ <div class="bub k" id="j1" style="left:60px;top:600px">HP saya? Masih 80%.</div>`});
+const camA=[[0,{x:430,y:1020,s:1.95}],[2.3,{x:430,y:1020,s:2.02},lin],[2.9,{x:540,y:960,s:1}],[9.4,{x:540,y:960,s:1}],[10.1,{x:520,y:1060,s:1.22},out],[12.4,{x:520,y:1060,s:1.28},lin]];
+const camB=[[12.4,{x:540,y:980,s:1.1}],[13.2,{x:540,y:960,s:1},out],[16.5,{x:540,y:960,s:1}],[17.1,{x:420,y:1070,s:1.35}],[18.2,{x:420,y:1070,s:1.4},lin]];
+const BX=840,BY=1055,BS=1.1,FLOOR=BY+T.KAKI*BS;
+const CH=[['c1',2.95],['c2',3.45],['c3',3.95],['c4',4.45]], MP=[3.2,3.7,4.2,4.7];
+H.cue('pop',.1);H.cue('buzz',.4,.5);H.cue('whoosh',2.4);CH.forEach(c=>H.cue('notif',c[1]));MP.forEach(s=>H.cue('tap',s));H.cue('pop',3.2);
+H.cue('whoosh',6.0);H.cue('bell',7.5);H.cue('pop',7.6);H.cue('pop',9.5);H.cue('buzz',9.9,.4);H.cue('boing',10.6);H.cue('pop',10.6);
+H.cue('whoosh',12.3);H.cue('pop',12.6);H.cue('whoosh',13.2);H.cue('stamp',13.9);H.cue('stamp',14.3);H.cue('stamp',14.7);H.cue('chime',15.0);H.cue('pop',15.3);H.cue('bell',15.6);H.cue('jingle',15.9);H.cue('pop',16.7);H.cue('whoosh',18.1);
+window.setT=function(t){
+  caps(t,[[-.7,2.6,'Desember lalu.|*Ketik "penuh" 60 kali.*'],[2.9,6.0,'Kamar penuh semua,|*chat tetap masuk.*'],[6.1,9.45,'Tamu yang sudah bayar|*malah nunggu di meja.*'],[9.5,12.3,'HP tinggal 1%.|*Tamunya keburu kesal.*'],[12.6,15.25,'Di tempat Bos Jaka,|*tampil "Penuh" sendiri.*'],[15.3,18.15,'Tamu tahu tanpa nanya.|*Bos Jaka fokus ke tamu.*']]);
+  const cb=E.kartu('cardB',t,13.2,16.6,{pk:H.punch(t,14.7,.3,.04)});
+  E.frame(t,{camA,camB,pindah:PINDAH,pindahXY:[340,1080],dim:cb,shakeA:H.shake(t,10.6,.4,10,3)});
+  /* ---- Pak Acong: ngetik terus ---- */
+  const hook=t<2.6, ketik=t>=2.6&&t<10.6, kena=t>=10.6;
+  const armR=hook?-126+Math.sin(t*4)*3:-108+Math.sin(t*3)*3;
+  const armL=ketik||hook?-74+Math.sin(t*22)*5:lerp(-74,150,out(seg(t,10.6,10.9)));
+  const face=hook?{eye:'line',mouth:'wavy',brow:-3,browTilt:12,look:[8,2]}
+    :kena?{eye:'wide',mouth:'sad',brow:9,look:[9,0]}
+    :t>7.6?{eye:'normal',mouth:'wavy',look:[8,4],brow:2,browTilt:10}
+    :{eye:'line',mouth:t%1.3<.5?'flat':'wavy',brow:-2,browTilt:12,look:[8,3]};
+  const sh=H.shake(t,10.6,.4,9,6);
+  $('Ac1').innerHTML=T.acong(340+sh[0],1085,1.2,T.hidup(t,5,{tilt:hook?6:(kena?-3:5),lean:hook?3:0,armL,armR,propR:T.hp(armR,t>=9.9?'bingung':'chat'),face}));
+  const mk=seg(t,10.8,11.4); $('Afx').innerHTML=mk>0?T.mendung(340,835,t,mk):'';
+  E.pop('bat',t,.35,2.6,{rot:4}); $('bat').style.transform+=` scale(${H.punch(t,.4,.3,.12)})`;
+  CH.forEach(([id,s],i)=>{E.pop(id,t,s,6.0,{rot:[-3,2,-2,3][i],goyang:2,fase:i});H.ring(TOPX(),'r'+id,t,s,{x:[300,880,330,820][i],y:[640,740,840,940][i],r:80,color:'#2DBE78',dur:.4});});
+  const n=57+MP.filter(s=>t>=s).length; $('mpn').textContent='×'+Math.min(60,n);
+  E.pop('mp',t,3.2,9.4,{rot:-3}); $('mp').style.transform+=` scale(${MP.reduce((a,s)=>a*H.punch(t,s,.25,.15),1)})`;
+  E.pop('t1',t,7.6,9.4,{rot:2}); E.pop('t2',t,10.6,12.3,{rot:3,goyang:2}); E.pop('bat2',t,9.5,12.3,{rot:-4}); $('bat2').style.transform+=` scale(${H.punch(t,9.9,.3,.15)})`;
+  H.lines(TOPX(),'ln',t,10.6,{x:700,y:760,n:10,r0:230,r1:310,dur:.5});
+  /* ---- Bimo datang & menunggu ---- */
+  const bx=lerp(1400,BX,io(seg(t,6.0,7.4))), jl=t>6.0&&t<7.4, wk=jl?T.jalan(t,12):{}, ketuk=t>7.5&&t<10.5?Math.max(0,Math.sin(t*20))*-13:0, marah=t>10.6;
+  const bsay=(t>7.6&&t<8.8)||(t>10.6&&t<11.8), pencet=t>7.45&&t<7.75;
+  if(t>6.0) $('Ac2').innerHTML=T.koper(bx+150,FLOOR-144,jl?Math.sin(t*12)*3:0)+T.bimo(bx,BY,BS,T.hidup(t,2,{...wk,legR:(wk.legR||0)+ketuk,tilt:-5,armL:marah?150+Math.sin(t*10)*8:(pencet?60:(wk.armL??12)),armR:wk.armR??-12,
+    face:{look:[-7,0],brow:marah?-4:5,browTilt:marah?-14:-3,...(bsay?T.bicara(t,2):marah?{mouth:'sad'}:{mouth:'flat'})}})); else $('Ac2').innerHTML='';
+  H.footfalls(6.1,7.4,12).forEach((s,i)=>H.puff($('Afx'),'pf'+i,t,s,{x:lerp(1400,BX,io(seg(s,6.0,7.4))),y:FLOOR,color:'#C9A777'}));
+  /* ---- Bos Jaka: semua tampil Penuh, layani Bimo ---- */
+  [['p1',13.9],['p2',14.3],['p3',14.7]].forEach(([id,s])=>{const on=t>=s;$(id).style.background=on?'#FD5B35':'#2DBE78';$(id).textContent=on?'Penuh':'Tersedia';$(id).style.transform=`translateY(-50%) scale(${H.punch(t,s,.3,.25)})`;});
+  $('tahu').style.opacity=seg(t,15.0,15.3);
+  const kasih=seg(t,15.5,15.9)*(1-seg(t,16.4,16.7)), jsay=t>16.7&&t<18.0;
+  const jR=-100+Math.sin(t*2)*4, jL=lerp(14,100,io(kasih));
+  $('Bc1').innerHTML=T.jaka(340,1075,1.2,T.hidup(t,3,{legs:false,tilt:3,armL:jL,armR:jR,propR:T.cangkir(jR,t),propL:kasih>.05?T.kunci(jL):'',face:{look:[8,0],brow:6,...(jsay?T.bicara(t,1):{mouth:'smile',eye:t>15.5?'happy':'normal'})}}));
+  const hb=H.hop(t,15.9,.4,26), terima=seg(t,15.6,15.9)*(1-seg(t,16.4,16.7));
+  $('Bc2').innerHTML=T.koper(BX+150,FLOOR-144,0)+T.bimo(BX,BY,BS,T.hidup(t,2,{tilt:-5,armL:lerp(12,90,io(terima)),armR:-12-seg(t,15.9,16.2)*(1-seg(t,16.9,17.2))*140,air:hb.y,squash:[hb.sx,hb.sy],face:{look:[-7,0],brow:t>15.9?9:4,...(t>15.9?{mouth:'open',eye:'happy'}:{mouth:'smile'})}}));
+  H.burst(TOPX(),'cf',t,15.0,{x:540,y:620,n:18,kind:'mix',spread:200,speed:480,seed:9});
+  E.pop('j1',t,16.7,18.15,{rot:-3});
+  E.cta(t,CTA,{tanya:'Desember lalu,|ngetik *"maaf, penuh"*|berapa kali?',xy:[420,1070],who:'jaka'});
+};
+setT(0);
+</script></body></html>
